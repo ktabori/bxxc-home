@@ -21,3 +21,13 @@ heroku:production:
     - 'uglify'                      # Combine with js libs and uglify
     - 'sails-linker:scripts_prod'   # Auto link scripts
     - 'sails-linker:styles_prod'    # Auto link styles
+
+prod:
+    - 'clean'
+    - 'less:prod'                   # Compile less files
+    - 'cssmin'                      # Combine with css libs and minimize
+    - 'coffee:server'               # Compile coffee files (server-side JS)
+    - 'coffee:client_prod'          # Compile coffee files (client-side JS)
+    - 'uglify'                      # Combine with js libs and uglify
+    - 'sails-linker:scripts_prod'   # Auto link scripts
+    - 'sails-linker:styles_prod'    # Auto link styles
