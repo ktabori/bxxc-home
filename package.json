@@ -43,6 +43,7 @@
     "memjs": "^0.8.4",
     "touch": "0.0.3",
     "schedule": "^0.1.0",
-    "grunt-exec": "^0.4.5"
+    "grunt-exec": "^0.4.5",
+    "newrelic": "^1.4.0"
   }
 }
