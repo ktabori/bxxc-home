@@ -1,0 +1,15 @@
+{>"layouts/master" pageName="frontpage"/}
+
+{<body}
+
+Hello
+
+{#twitter}
+  {UserName}
+{/twitter}
+
+{#instagram}
+  {UserName}
+{/instagram}
+
+{/body}

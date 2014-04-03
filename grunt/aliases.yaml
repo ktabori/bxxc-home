@@ -1,0 +1,23 @@
+#Development task
+dev:
+    - 'clean'                       
+    - 'less:dev'                    # Compile less files
+    - 'coffee:server'               # Compile coffee files (server-side JS)
+    - 'coffee:client'               # Compile coffee files (client-side JS)
+    - 'copy:less_sourcemap'         # Copy Less Map
+    - 'sails-linker:scripts_dev'    # Auto link scripts
+    - 'sails-linker:styles_dev'     # Auto link styles
+    - 'concurrent'                  # Run solution (watch, nodemon)
+
+mongohq:
+    - 'exec'
+
+heroku:production:
+    - 'clean'
+    - 'less:prod'                   # Compile less files
+    - 'cssmin'                      # Combine with css libs and minimize
+    - 'coffee:server'               # Compile coffee files (server-side JS)
+    - 'coffee:client_prod'          # Compile coffee files (client-side JS)
+    - 'uglify'                      # Combine with js libs and uglify
+    - 'sails-linker:scripts_prod'   # Auto link scripts
+    - 'sails-linker:styles_prod'    # Auto link styles
