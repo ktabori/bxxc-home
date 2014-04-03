@@ -1,0 +1,12 @@
+<h2>TWITTER</h2>
+
+{#twitter}
+
+  {@gt key=3 value=$idx }
+    <img src="{UserProfileImage}" alt="UserName">
+    <span>{UserName} </span>
+    <span>{UserScreenName}</span>
+    <p>{@link string="{Text}" /}</p>
+  {/gt}
+
+{/twitter}

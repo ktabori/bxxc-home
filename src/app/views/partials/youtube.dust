@@ -1,0 +1,16 @@
+<h2>YOUTUBE</h2>
+
+{#youtube}
+
+    {@gt key=6 value=$idx }
+      {@eq key=0 value=$idx }
+
+      {:else}
+        <img src="{Thumbnail}" alt="UserName">
+        <h2>{Title}</h2>
+        <span>{Author} </span>
+        <p>{@link string="{Description}" /}</p>
+      {/eq}
+    {/gt}
+    
+{/youtube}

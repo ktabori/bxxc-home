@@ -1,0 +1,12 @@
+<h2>TOP</h2>
+
+{#youtube}
+
+  {@gt key=1 value=$idx }
+    <img src="{Thumbnail}" alt="UserName">
+    <h2>{Title}</h2>
+    <span>{Author} </span>
+    <p>{@link string="{Description}" /}</p>
+  {/gt}
+
+{/youtube}

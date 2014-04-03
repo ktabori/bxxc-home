@@ -6,6 +6,7 @@ module.exports =
         files:
             'src/app.js': [
                 'src/app/config/config.coffee',
+                'src/app/config/fetch.coffee',
                 'src/app/config/cron.coffee',
                 'src/app/data.coffee',
                 'src/app/app.coffee',

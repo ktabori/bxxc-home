@@ -2,6 +2,11 @@
 
 {<body}
 
-Hello World
+  {>"partials/header" /}
+  {>"partials/navigation" /}
+  {>"partials/top" /}
+  {>"partials/instagram" /}
+  {>"partials/twitter" /}
+  {>"partials/youtube" /}
 
 {/body}

@@ -1,11 +1,11 @@
 [
     {
-        "_id": "533d8b3e6056f1495815dcdf",
+        "_id": "533d8b416056f14723f66f99",
         "UserName": "BxxC Clan",
         "Favorited": "False",
         "RetweetCount": "0",
-        "URL": "https://twitter.com/bxxcclan/status/450546458765561856",
-        "Text": "Predator kommer till Call of Duty: Ghosts - http://t.co/DhzN82YYxz",
+        "URL": "https://twitter.com/bxxcclan/status/451467874302197760",
+        "Text": "Molyneux: Early Access Godus was boring like 'Call of Duty without guns' - http://t.co/bh3Gfy1vwN",
         "UserScreenName": "bxxcclan",
         "Retweeted": "False",
         "UserDescription": "Game News & BxxC - Hungarian FPS Clan. Play like YOLO.",
@@ -13,7 +13,7 @@
         "UserFollowersCount": "2",
         "UserID": "2360773571",
         "FavoriteCount": "0",
-        "CreatedAt": "Mon Mar 31 08:13:41 +0000 2014"
+        "CreatedAt": "Wed Apr 02 21:15:03 +0000 2014"
     },
     {
         "_id": "533d8b3f6056f148a2e47e41",
@@ -32,12 +32,12 @@
         "CreatedAt": "Wed Apr 02 00:45:05 +0000 2014"
     },
     {
-        "_id": "533d8b416056f14723f66f99",
+        "_id": "533d8b3e6056f1495815dcdf",
         "UserName": "BxxC Clan",
         "Favorited": "False",
         "RetweetCount": "0",
-        "URL": "https://twitter.com/bxxcclan/status/451467874302197760",
-        "Text": "Molyneux: Early Access Godus was boring like 'Call of Duty without guns' - http://t.co/bh3Gfy1vwN",
+        "URL": "https://twitter.com/bxxcclan/status/450546458765561856",
+        "Text": "Predator kommer till Call of Duty: Ghosts - http://t.co/DhzN82YYxz",
         "UserScreenName": "bxxcclan",
         "Retweeted": "False",
         "UserDescription": "Game News & BxxC - Hungarian FPS Clan. Play like YOLO.",
@@ -45,6 +45,6 @@
         "UserFollowersCount": "2",
         "UserID": "2360773571",
         "FavoriteCount": "0",
-        "CreatedAt": "Wed Apr 02 21:15:03 +0000 2014"
+        "CreatedAt": "Mon Mar 31 08:13:41 +0000 2014"
     }
 ]

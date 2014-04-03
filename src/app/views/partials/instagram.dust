@@ -1,0 +1,19 @@
+<h2>INSTAGRAM</h2>
+
+{#instagram}
+
+  {@gt key=6 value=$idx }
+    <img src="{StandardURL}" alt="{CaptionText}">
+  {/gt}
+
+{/instagram}
+
+<hr />
+
+{#instagramTagged}
+
+  {@gt key=6 value=$idx }
+    <img src="{StandardURL}" alt="{CaptionText}">
+  {/gt}
+
+{/instagramTagged}

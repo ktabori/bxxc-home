@@ -10,7 +10,8 @@
 <!--<![endif]-->
 
 	<head>
-
+      
+      <script type="text/javascript">newrelic.getBrowserTimingHeader()}}</script>
   		{> "layouts/_head" /}
 
 	</head>
