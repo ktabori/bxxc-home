@@ -4,11 +4,11 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt prod"
   },
   "engines": {
-    "node": "0.10.x",
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt prod"
+    "node": "0.10.x"
   },
   "dependencies": {
     "express": "4.0.0-rc4",
