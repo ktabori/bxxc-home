@@ -7,7 +7,7 @@ MongoClient = mongodb.MongoClient
 if env == 'development'
   periode     = '30s'
 else
-  periode     = '900s'
+  periode     = '30s'
 
 cron.every(periode).do -> 
   console.log 'Fetching data from Vulp Mongo' 

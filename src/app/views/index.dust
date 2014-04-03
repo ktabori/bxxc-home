@@ -2,14 +2,6 @@
 
 {<body}
 
-Hello
-
-{#twitter}
-  {UserName}
-{/twitter}
-
-{#instagram}
-  {UserName}
-{/instagram}
+Hello World
 
 {/body}
