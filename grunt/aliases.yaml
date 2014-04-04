@@ -10,7 +10,9 @@ dev:
     - 'concurrent'                  # Run solution (watch, nodemon)
 
 mongohq:
-    - 'exec'
+    - 'exec:export_mongohq'
+    - 'exec:drop_local_mongo'
+    - 'exec:import_mongohq'
 
 heroku:production:
     - 'clean'
