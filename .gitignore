@@ -6,3 +6,4 @@ src/app.js
 src/assets/css
 src/assets/js
 json/*
+newrelic_agent.log
