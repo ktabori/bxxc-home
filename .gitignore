@@ -5,4 +5,4 @@ dist/
 src/app.js
 src/assets/css
 src/assets/js
-json/
+json/*
