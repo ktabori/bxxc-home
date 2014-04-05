@@ -15,4 +15,4 @@ module.exports =
             cleancss: true,
             report: 'min'
         files:
-            'src/assets/css/core.css': ['src/assets/less/core.less']
+            'src/assets/css/core.min.css': ['src/assets/less/core.less']

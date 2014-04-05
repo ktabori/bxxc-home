@@ -7,8 +7,7 @@ module.exports =
             appRoot:  'src'
 
         files:
-            'src/app/views/layouts/_scripts.dust': ['src/assets/js/**/*.js',
-                                                    'src/assets/libs/js/jquery/*.js', 
+            'src/app/views/layouts/_scripts.dust': ['src/assets/libs/js/jquery/*.js', 
                                                     'src/assets/libs/js/transition.js',
                                                     'src/assets/libs/js/alert.js',
                                                     'src/assets/libs/js/button.js',
@@ -21,7 +20,8 @@ module.exports =
                                                     'src/assets/libs/js/scrollspy.js',
                                                     'src/assets/libs/js/tab.js',
                                                     'src/assets/libs/js/affix.js',
-                                                    'src/assets/libs/js/jquery/tabular/*.js']
+                                                    'src/assets/libs/js/jquery/tabular/*.js',
+                                                    'src/assets/js/**/*.js']
 
     scripts_prod:
         options:
