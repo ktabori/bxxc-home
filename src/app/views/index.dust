@@ -1,12 +1,12 @@
-{>"layouts/master" pageName="frontpage"/}
+{>"layouts/master_video_bg" pageName="frontpage"/}
 
 {<body}
 
-  {>"partials/header" /}
+  {! {>"partials/header" /}
   {>"partials/navigation" /}
   {>"partials/top" /}
   {>"partials/instagram" /}
   {>"partials/twitter" /}
-  {>"partials/youtube" /}
+  {>"partials/youtube" /} !}
 
 {/body}
