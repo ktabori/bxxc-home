@@ -2,11 +2,17 @@
 
 {<body}
 
-  {! {>"partials/header" /}
-  {>"partials/navigation" /}
-  {>"partials/top" /}
-  {>"partials/instagram" /}
-  {>"partials/twitter" /}
-  {>"partials/youtube" /} !}
+  <div class="content">
+    <div class="container">
+
+      {! {>"partials/header" /}
+      {>"partials/navigation" /}
+      {>"partials/top" /}
+      {>"partials/instagram" /}
+      {>"partials/twitter" /}
+      {>"partials/youtube" /} !}
+
+    </div>
+  </div>
 
 {/body}
