@@ -1,19 +1,31 @@
-<h2>INSTAGRAM</h2>
+<div class="col-md-8">
+  <div class="box">
 
-{#instagram}
+    <h2>Instagram <span class="sub pull-right">#bxxcclan</span></h2>
 
-  {@gt key=6 value=$idx }
-    <img src="{StandardURL}" alt="{CaptionText}">
-  {/gt}
+    <div class="img-holder">
 
-{/instagram}
+    {#instagram}
 
-<hr />
+      {@gt key=6 value=$idx }
+        <div class="col-md-4">
+          <img src="{StandardURL}" alt="{CaptionText}">
+        </div>
+      {/gt}
 
-{#instagramTagged}
+    {/instagram}
 
-  {@gt key=6 value=$idx }
-    <img src="{StandardURL}" alt="{CaptionText}">
-  {/gt}
+    {#instagramTagged}
 
-{/instagramTagged}
+      {@gt key=6 value=$idx }
+        <div class="col-md-4">
+          <img src="{StandardURL}" alt="{CaptionText}">
+        </div>
+      {/gt}
+
+    {/instagramTagged}
+
+    </div>
+    
+  </div>
+</div>

@@ -16,12 +16,11 @@
   </head>
 
   <body>
-
-    <div id="loading"></div>
-    <div id="overlay"></div>
     
     {+body /}
 
+    <div id="loading"></div>
+    <div id="overlay"></div>
 
     {> "layouts/_scripts" /}
       

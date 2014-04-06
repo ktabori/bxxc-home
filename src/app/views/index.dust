@@ -5,9 +5,16 @@
   <div class="content">
     <div class="container">
 
-      {! {>"partials/header" /}
-      {>"partials/navigation" /}
+      {>"partials/header" /}
       {>"partials/top" /}
+
+      <div class="row">
+        {>"partials/instagram" /}
+      </div>
+
+      {! 
+      {>"partials/navigation" /}
+      
       {>"partials/instagram" /}
       {>"partials/twitter" /}
       {>"partials/youtube" /} !}

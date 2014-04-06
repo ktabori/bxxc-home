@@ -15,7 +15,8 @@
 <script src="/assets/libs/js/tab.js"></script>
 <script src="/assets/libs/js/affix.js"></script>
 <script src="/assets/libs/js/jquery/bigvid/bigvid.js"></script>
-<script src="/assets/js/video_bg.js"></script>
+<script src="/assets/libs/js/jquery/tubeplayer/tubeplayer.js"></script>
+<script src="/assets/js/video.js"></script>
 <!-- scripts end -->
 
 <script type="text/javascript">
