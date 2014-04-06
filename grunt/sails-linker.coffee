@@ -20,7 +20,7 @@ module.exports =
                                                     'src/assets/libs/js/scrollspy.js',
                                                     'src/assets/libs/js/tab.js',
                                                     'src/assets/libs/js/affix.js',
-                                                    'src/assets/libs/js/jquery/tabular/*.js',
+                                                    'src/assets/libs/js/jquery/bigvid/*.js',
                                                     'src/assets/js/**/*.js']
 
     scripts_prod:

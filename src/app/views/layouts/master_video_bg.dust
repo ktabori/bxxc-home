@@ -17,13 +17,11 @@
 
   <body>
 
-    <div id="wrapper">
-      <div id="overlay">
+    <div id="loading"></div>
+    <div id="overlay"></div>
     
-        {+body /}
+    {+body /}
 
-      </div>
-    </div>
 
     {> "layouts/_scripts" /}
       

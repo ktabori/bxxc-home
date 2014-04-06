@@ -2271,6 +2271,7 @@
                     return indexOf.call(checkContext, elem) > -1;
                 }, implicitRelative, true),
                 matchers = [
+
                     function(elem, context, xml) {
                         return (!leadingRelative && (xml || context !== outermostContext)) || (
                             (checkContext = context).nodeType ?
@@ -6228,6 +6229,7 @@
         animationPrefilters = [defaultPrefilter],
         tweeners = {
             "*": [
+
                 function(prop, value) {
                     var tween = this.createTween(prop, value),
                         target = tween.cur(),
