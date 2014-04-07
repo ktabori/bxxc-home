@@ -4,17 +4,17 @@
     <h2>Twitter</h2>
 
     {#twitter}
-    <div class="twitter-holder">
-
+    
       {@gt key=3 value=$idx }
-      <div class="twitter-meta">
-        <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
-        <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
-      </div>
-        <p class="tweet">{@link string="{Text}" /}</p>
+        <div class="twitter-holder">
+          <div class="twitter-meta">
+            <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
+            <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
+          </div>
+          <p class="tweet">{@link string="{Text}" /}</p>
+        </div>
       {/gt}
 
-    </div>
     {/twitter}
     
   </div>
