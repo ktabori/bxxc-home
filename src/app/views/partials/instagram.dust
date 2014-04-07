@@ -28,4 +28,9 @@
     </div>
     
   </div>
+  <a href="#">
+    <div class="box-bottom">
+      <span class="box-button">See all images</span>
+    </div>
+  </a>
 </div>

@@ -1,3 +1,4 @@
+{!
 <h2>YOUTUBE</h2>
 
 {#youtube}
@@ -6,11 +7,36 @@
       {@eq key=0 value=$idx }
 
       {:else}
-        <img src="{Thumbnail}" alt="UserName">
-        <h2>{Title}</h2>
-        <span>{Author} </span>
-        <p>{@link string="{Description}" /}</p>
+        <div class="col-md-6 video-col">
+          <div class="player" data-video='{@youtube link="{Thumbnail}" /}'></div>
+        </div>
       {/eq}
     {/gt}
     
 {/youtube}
+!}
+
+<div class="col-md-12">
+  <div class="box youtube">
+
+    <h2>Youtube</h2>
+
+    <div class="img-holder">
+    {#youtube}
+            
+    <div class="col-md-6 video-col">
+      <div class="player" data-video='{@youtube link="{Thumbnail}" /}'></div>
+    </div>
+        
+    {/youtube}
+    </div>
+    
+  </div>
+
+  <a href="#">
+    <div class="box-bottom">
+      <span class="box-button">See all videos</span>
+    </div>
+  </a>
+
+</div>

@@ -7,18 +7,16 @@
 
       {>"partials/header" /}
       {>"partials/top" /}
-
+      
       <div class="row">
         {>"partials/instagram" /}
+        {>"partials/twitter" /}
       </div>
-
-      {! 
-      {>"partials/navigation" /}
       
-      {>"partials/instagram" /}
-      {>"partials/twitter" /}
-      {>"partials/youtube" /} !}
-
+      <div class="row">
+        {>"partials/youtube" /}
+      </div>
+      
     </div>
   </div>
 

@@ -24,6 +24,8 @@ if video == true
     overlay = ->
       width = $(window).width()
       height = $(window).height()
+      console.log width
+      console.log height
       $("#overlay").css "width", width
       $("#overlay").css "min-height", height
 
@@ -35,7 +37,7 @@ if video == true
 
     loading()
     overlay()
-    
+
     $(window).resize ->
       overlay()
       loading()
@@ -46,8 +48,20 @@ if video == true
       console.log 'Check'
       if $('.vjs-user-inactive').length > 0
         $('#loading').delay(2000).fadeOut(2000)
-        $('#overlay').fadeTo(0, 0.3)
+        $('#overlay').fadeTo(0, 0.4)
         $('body').loadie(0.80)
+
+        styles = {
+          'position' : 'fixed'
+          'top': '0'
+          'left': '0'
+          'width': '100%'
+          'height': 'auto'
+          'z-index': '7990'
+        }
+
+        $('#big-video-vid_html5_api').css(styles)
+
         setTimeout (->
           $('body').loadie(1)
         ), 3000
@@ -87,22 +101,21 @@ $(".player").each ->
     $(this).tubeplayer
       width: width
       height: height
-      allowFullScreen: true
+      allowFullScreen: false
       initialVideo: video
       theme: "light"
       color: "white"
       autoPlay: true
       iframed: true
       onPlayerPlaying: ->
-        stopAll video
-        $('#overlay').fadeTo(2000, 0.8)
+        $('#overlay').fadeTo(2000, 1)
 
       onPlayerEnded: ->
         $(this).tubeplayer "destroy"
-        $('#overlay').fadeTo(2000, 0.3)
+        $('#overlay').fadeTo(2000, 0.4)
 
       onPlayerPaused: ->
-        $('#overlay').fadeTo(2000, 0.3)
+        $('#overlay').fadeTo(2000, 0.4)
 
   $(window).resize ->
     destroyAll()
@@ -117,4 +130,4 @@ $(".player").each ->
       $(this).css "width", width
       $(this).css "height", height
 
-      $('#overlay').fadeTo(2000, 0.3)
+      $('#overlay').fadeTo(2000, 0.4)

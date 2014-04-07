@@ -1,12 +1,28 @@
-<h2>TWITTER</h2>
+<div class="col-md-4">
+  <div class="box twitter">
 
-{#twitter}
+    <h2>Twitter</h2>
 
-  {@gt key=3 value=$idx }
-    <img src="{UserProfileImage}" alt="UserName">
-    <span>{UserName} </span>
-    <span>{UserScreenName}</span>
-    <p>{@link string="{Text}" /}</p>
-  {/gt}
+    {#twitter}
+    <div class="twitter-holder">
 
-{/twitter}
+      {@gt key=3 value=$idx }
+      <div class="twitter-meta">
+        <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
+        <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
+      </div>
+        <p class="tweet">{@link string="{Text}" /}</p>
+      {/gt}
+
+    </div>
+    {/twitter}
+    
+  </div>
+
+  <a href="#">
+    <div class="box-bottom">
+      <span class="box-button">See all tweets</span>
+    </div>
+  </a>
+
+</div>

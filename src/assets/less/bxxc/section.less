@@ -49,8 +49,72 @@
     padding: 0 15px;
   }
 
+  &.twitter {
+    padding-bottom: 0px;
+  }
+
+  &.youtube {
+    .video-col {
+      margin-top: 30px;
+    }
+  }
+
+  .twitter-holder {
+    padding: 30px;
+    border-bottom: 1px solid @id-1-glass;
+
+    &:last-child {
+      border: none;
+    }
+
+    p.tweet {
+      margin-bottom: 0px;
+      margin-top: 15px;
+      text-align: left;
+      color: white;
+      font-family: @exo-regular;
+      font-size: 16px;
+    }
+  }
+
   img {
     width: 100%;
     margin-top: 30px;
+  }
+
+  .twitter-meta {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .twitter-avatar {
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin-top: 0;
+  }
+
+  .twitter-username {
+    span {
+      color: white;
+      background: @id-1;
+      padding: 3px;
+      float: left;
+      font-family: @exo-regular;
+      margin-left: 15px;
+    }
+  }
+}
+
+.box-bottom {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background: @id-1;
+  text-align: center;
+  .transition();
+
+  &:hover {
+    background: @id-1-glass;
   }
 }
