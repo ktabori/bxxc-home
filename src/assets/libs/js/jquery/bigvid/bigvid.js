@@ -7709,8 +7709,8 @@ vjs.plugin = function(name, init) {
         var settings = $.extend({}, defaults, options);
 
         function updateSize() {
-            var windowW = settings.container.width();
-            var windowH = settings.container.height();
+            var windowW = $(window).width();
+            var windowH = $(window).height();
             var windowAspect = windowW / windowH;
 
             if (settings.container.is($('body'))) {

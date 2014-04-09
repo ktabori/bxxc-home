@@ -6,7 +6,7 @@ if video == true
   $ ->
     BV = new $.BigVideo()
     BV.init()
-    BV.show "https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4", {doLoop:true}
+    BV.show "https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4", {doLoop:true, skipListeners:true}
 
   #$ ->
   #  BV = new $.BigVideo()
@@ -50,33 +50,6 @@ if video == true
         $('#loading').delay(2000).fadeOut(2000)
         $('#overlay').fadeTo(0, 0.4)
         $('body').loadie(0.80)
-
-        width = $(window).width()
-
-        stylesWidth = {
-          'position' : 'fixed'
-          'top': '0'
-          'left': '0'
-          'width': '100%'
-          'height': 'auto'
-          'z-index': '7990'
-        }
-
-        stylesHeight = {
-          'position' : 'fixed'
-          'top': '0'
-          'left': '0'
-          'height': '100%'
-          'width': 'auto'
-          'z-index': '7990'
-        }
-
-        if width > 1830
-          $('#big-video-vid_html5_api').css(stylesWidth)
-        else
-          $('#big-video-vid_html5_api').css(stylesHeight)
-
-        
 
         setTimeout (->
           $('body').loadie(1)
