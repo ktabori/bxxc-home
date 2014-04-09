@@ -6,7 +6,10 @@ if video == true
   $ ->
     BV = new $.BigVideo()
     BV.init()
-    BV.show "https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4", {doLoop:true, skipListeners:true}
+    if Modernizr.touch
+      BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bg.jpg'
+    else
+      BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4', {doLoop:true, ambient:true}
 
   #$ ->
   #  BV = new $.BigVideo()
