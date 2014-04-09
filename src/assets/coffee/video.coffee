@@ -51,7 +51,9 @@ if video == true
         $('#overlay').fadeTo(0, 0.4)
         $('body').loadie(0.80)
 
-        styles = {
+        width = $(window).width()
+
+        stylesWidth = {
           'position' : 'fixed'
           'top': '0'
           'left': '0'
@@ -60,7 +62,21 @@ if video == true
           'z-index': '7990'
         }
 
-        $('#big-video-vid_html5_api').css(styles)
+        stylesHeight = {
+          'position' : 'fixed'
+          'top': '0'
+          'left': '0'
+          'height': '100%'
+          'width': 'auto'
+          'z-index': '7990'
+        }
+
+        if width > 1830
+          $('#big-video-vid_html5_api').css(stylesWidth)
+        else
+          $('#big-video-vid_html5_api').css(stylesHeight)
+
+        
 
         setTimeout (->
           $('body').loadie(1)
