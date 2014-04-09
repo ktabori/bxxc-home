@@ -1,37 +1,35 @@
 video = true
 
-if video == true
+$(document).ready ->
+  overlay = ->
+    width = $(window).width()
+    height = $(window).height()
+    console.log width
+    console.log height
+    $("#overlay").css "width", width
+    $("#overlay").css "min-height", height
+
+  overlay()
+
+  $(window).resize ->
+    overlay()
+
+if Modernizr.touch or video is false
+  style = {
+    "background-image": "url('https://s3-eu-west-1.amazonaws.com/bxxc/bg.jpg')"
+    "background-position": "fixed"
+    "background-size-x": "cover"
+  }
+  $('#overlay').css(style)
+else
   $('body').loadie()
 
   $ ->
     BV = new $.BigVideo()
     BV.init()
-    if Modernizr.touch
-      BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bg.jpg'
-    else
-      BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4', {doLoop:true, ambient:true}
-
-  #$ ->
-  #  BV = new $.BigVideo()
-  #  vids = [
-  #    "https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4"
-  #  ]
-  #  vids.sort -> # random order on load
-  #    0.5 - Math.random()
-
-  #  BV.init()
-  #  BV.show vids,
-  #    ambient: true
+    BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4', {doLoop:true, ambient:true}
 
   $(document).ready ->
-    overlay = ->
-      width = $(window).width()
-      height = $(window).height()
-      console.log width
-      console.log height
-      $("#overlay").css "width", width
-      $("#overlay").css "min-height", height
-
     loading = ->
       width = $(window).width()
       height = $(window).height()
@@ -39,10 +37,8 @@ if video == true
       $("#loading").css "min-height", height
 
     loading()
-    overlay()
 
     $(window).resize ->
-      overlay()
       loading()
 
     $('body').loadie(0.40)
