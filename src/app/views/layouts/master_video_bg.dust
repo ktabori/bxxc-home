@@ -21,6 +21,7 @@
 
     <div id="loading"></div>
     <div id="overlay"></div>
+    <div id="overlay-img"></div>
 
     {> "layouts/_scripts" /}
       

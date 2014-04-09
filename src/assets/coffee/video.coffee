@@ -1,26 +1,28 @@
 video = true
 
 $(document).ready ->
-  overlay = ->
+  overlayImg = ->
     width = $(window).width()
     height = $(window).height()
-    console.log width
-    console.log height
-    $("#overlay").css "width", width
-    $("#overlay").css "min-height", height
+    $("#overlay-img").css "width", width
+    $("#overlay-img").css "min-height", height
+
+  overlay = ->
+      width = $(window).width()
+      height = $(window).height()
+      $("#overlay").css "width", width
+      $("#overlay").css "min-height", height
 
   overlay()
+  overlayImg()
 
   $(window).resize ->
+    overlayImg()
     overlay()
 
 if Modernizr.touch or video is false
-  style = {
-    "background-image": "url('https://s3-eu-west-1.amazonaws.com/bxxc/bg.jpg')"
-    "background-position": "fixed"
-    "background-size-x": "cover"
-  }
-  $('#overlay').css(style)
+  $('#overlay-img').show()
+  $('#overlay').fadeTo(0, 0.4)
 else
   $('body').loadie()
 
@@ -28,7 +30,13 @@ else
     BV = new $.BigVideo()
     BV.init()
     BV.show 'https://s3-eu-west-1.amazonaws.com/bxxc/bxxcbg.mp4', {doLoop:true, ambient:true}
-
+    setTimeout (->
+      $('#overlay-img').fadeIn(3000)
+      setTimeout (->
+        BV.getPlayer().dispose()
+      ), 3000
+    ), 25000
+    
   $(document).ready ->
     loading = ->
       width = $(window).width()
@@ -44,7 +52,6 @@ else
     $('body').loadie(0.40)
 
     check = setInterval (->
-      console.log 'Check'
       if $('.vjs-user-inactive').length > 0
         $('#loading').delay(2000).fadeOut(2000)
         $('#overlay').fadeTo(0, 0.4)
@@ -59,15 +66,11 @@ else
       clearInterval(check)
     ), 5000
 
-# Video player
-stopAll = (except) ->
-  $(".player").each ->
+destroyAll = (except) ->
+  console.log('Destroy All')
+  $("div.player.jquery-youtube-tubeplayer").each ->
     video = $(this).attr("data-video")
-    $(this).tubeplayer "pause"  if except isnt video
-
-destroyAll = ->
-  $(".player").each ->
-    $(this).tubeplayer "destroy"
+    $(this).tubeplayer "destroy" if except isnt video
 
 $(".player").each ->
 
@@ -84,38 +87,47 @@ $(".player").each ->
   $(this).css "width", width
   $(this).css "height", height
 
-  $(this).click ->
-    stopAll video
-    $(this).tubeplayer
-      width: width
-      height: height
-      allowFullScreen: false
-      initialVideo: video
-      theme: "light"
-      color: "white"
-      autoPlay: true
-      iframed: true
-      onPlayerPlaying: ->
-        $('#overlay').fadeTo(2000, 1)
+$('.player').click ->
 
-      onPlayerEnded: ->
-        $(this).tubeplayer "destroy"
-        $('#overlay').fadeTo(2000, 0.4)
+  width = $(this).closest('.video-col').width()
+  width = width-4
+  ratio = 480/270
+  height = Math.round(width/ratio)
+  bigger = 480/width
 
-      onPlayerPaused: ->
-        $('#overlay').fadeTo(2000, 0.4)
+  video = $(this).attr("data-video")
+  destroyAll video
 
-  $(window).resize ->
-    destroyAll()
+  $(this).tubeplayer
+    width: width
+    height: height
+    allowFullScreen: false
+    initialVideo: video
+    theme: "light"
+    color: "white"
+    autoPlay: true
+    iframed: true
+    onPlayerPlaying: ->
+      $('#overlay').fadeTo(2000, 1)
 
-    $(".player").each ->
-
-      width = $(this).closest('.video-col').width()
-      width = width-4
-      ratio = 480/270
-      height = Math.round(width/ratio)
-
-      $(this).css "width", width
-      $(this).css "height", height
-
+    onPlayerEnded: ->
+      $(this).tubeplayer "destroy"
       $('#overlay').fadeTo(2000, 0.4)
+
+    onPlayerPaused: ->
+      $('#overlay').fadeTo(2000, 0.4)
+
+$(window).resize ->
+  destroyAll()
+
+  $(".player").each ->
+
+    width = $(this).closest('.video-col').width()
+    width = width-4
+    ratio = 480/270
+    height = Math.round(width/ratio)
+
+    $(this).css "width", width
+    $(this).css "height", height
+
+    $('#overlay').fadeTo(2000, 0.4)
