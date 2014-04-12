@@ -6,15 +6,15 @@
         
           {@gt key=1 value=$idx }
           
-          <div class="col-md-6 video-col">
+          <div class="col-md-6 col-sm-12 co-xs-12 video-col">
             <div class="player" data-video='{@youtube link="{Thumbnail}" /}'></div>
           </div>
           
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6 sm-20 col-xs-12 xs-20">
             <p>{@link string="{Description}" /}</p>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6 sm-20 col-xs-12 xs-10">
             <a href="{globals.youtube}" class="btn btn-primary btn-lg btn-block"> 
               <span class="social youtube"></span> 
               <span class="text">youtube<span>

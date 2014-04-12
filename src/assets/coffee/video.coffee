@@ -5,12 +5,21 @@ $(document).ready ->
     width = $(window).width()
     height = $(window).height()
     $("#overlay-img").css "width", width
-    $("#overlay-img").css "min-height", height
+    
+    if width < 800
+      $("#overlay-img").css "min-height", height + 100
+    else
+      $("#overlay-img").css "min-height", height
 
   overlay = ->
-      width = $(window).width()
-      height = $(window).height()
-      $("#overlay").css "width", width
+    width = $(window).width()
+    height = $(window).height()
+    $("#overlay").css "width", width
+    $("#overlay").css "min-height", height
+
+    if width < 800
+      $("#overlay").css "min-height", height + 100
+    else
       $("#overlay").css "min-height", height
 
   overlay()
@@ -75,7 +84,7 @@ destroyAll = (except) ->
 $(".player").each ->
 
   width = $(this).closest('.video-col').width()
-  width = width-4
+  width = width
   ratio = 480/270
   height = Math.round(width/ratio)
   bigger = 480/width
@@ -90,7 +99,7 @@ $(".player").each ->
 $('.player').click ->
 
   width = $(this).closest('.video-col').width()
-  width = width-4
+  width = width
   ratio = 480/270
   height = Math.round(width/ratio)
   bigger = 480/width
@@ -123,7 +132,7 @@ $(window).resize ->
   $(".player").each ->
 
     width = $(this).closest('.video-col').width()
-    width = width-4
+    width = width
     ratio = 480/270
     height = Math.round(width/ratio)
 

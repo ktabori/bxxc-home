@@ -24,7 +24,7 @@
     <div class="img-holder">
     {#youtube}
             
-    <div class="col-md-6 video-col">
+    <div class="col-md-6 col-sm-6 video-col">
       <div class="player" data-video='{@youtube link="{Thumbnail}" /}'></div>
     </div>
         
