@@ -120,8 +120,34 @@
 }
 
 @media (max-width: @screen-xs-max) {
+  
+  .box {
+    padding-bottom: 10px;
 
-  .section p {
-    line-height: 1.4;
+    .img-holder {
+      padding: 0 5px;
+    }
+
+    img {
+      margin-top: 10px;
+    }
+
+    .twitter-holder {
+      padding: 10px;
+    }
+
+    &.youtube {
+      .video-col {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .section {
+    padding: 10px 20px;
+
+    p {
+      line-height: 1.4;
+    }
   }
 }
