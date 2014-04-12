@@ -108,7 +108,7 @@ $('.player').click ->
     autoPlay: true
     iframed: true
     onPlayerPlaying: ->
-      $('#overlay').fadeTo(2000, 1)
+      $('#overlay').fadeTo(2000, 0.8)
 
     onPlayerEnded: ->
       $(this).tubeplayer "destroy"
