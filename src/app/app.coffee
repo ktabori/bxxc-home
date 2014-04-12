@@ -12,13 +12,12 @@ client = memjs.Client.create()
 
 app = express()
 
-app.use (req, res, next, newrelic) ->
-
-    fs.readFile __dirname + "/app/globals.json", "utf8", (err, data) ->
-        throw err  if err
-        res.locals.globals = JSON.parse(data)
-        res.locals.canonical =  req.protocol + '://' + req.get('host') + req.path
-        next()
+app.use (req, res, next) ->
+  fs.readFile __dirname + "/app/globals.json", "utf8", (err, data) ->
+    throw err  if err
+    res.locals.globals = JSON.parse(data)
+    res.locals.canonical =  req.protocol + '://' + req.get('host') + req.path
+    next()
 
 app.engine 'dust', cons.dust
 app.listen config.port

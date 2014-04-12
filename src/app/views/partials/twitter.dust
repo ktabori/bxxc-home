@@ -7,10 +7,12 @@
     
       {@gt key=3 value=$idx }
         <div class="twitter-holder">
-          <div class="twitter-meta">
-            <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
-            <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
-          </div>
+          <a href="{URL}">
+            <div class="twitter-meta">
+              <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
+              <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
+            </div>
+          </a>
           <p class="tweet">{@link string="{Text}" /}</p>
         </div>
       {/gt}
@@ -19,7 +21,7 @@
     
   </div>
 
-  <a href="#">
+  <a href="{globals.twitter}">
     <div class="box-bottom">
       <span class="box-button">See all tweets</span>
     </div>

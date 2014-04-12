@@ -1,1 +1,3 @@
-<div class="logo" alt="logo"></div>
+<a href="/">
+  <div class="logo" alt="logo"></div>
+</a>

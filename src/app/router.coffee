@@ -8,7 +8,7 @@ if env is 'production'
 class Router
     routes:
         #Main pages
-        '/'                             : 'index'
+        '/'  :  'index'
 
     constructor: ->
         @app = express.Router()

@@ -33,7 +33,7 @@
     
   </div>
 
-  <a href="#">
+  <a href="{globals.youtube}">
     <div class="box-bottom">
       <span class="box-button">See all videos</span>
     </div>

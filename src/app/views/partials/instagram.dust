@@ -8,9 +8,11 @@
     {#instagram}
 
       {@gt key=6 value=$idx }
-        <div class="col-md-4">
-          <img src="{StandardURL}" alt="{CaptionText}">
-        </div>
+        <a href="{Link}">
+          <div class="col-md-4">
+            <img src="{StandardURL}" alt="{CaptionText}">
+          </div>
+        </a>
       {/gt}
 
     {/instagram}
@@ -18,9 +20,11 @@
     {#instagramTagged}
 
       {@gt key=6 value=$idx }
-        <div class="col-md-4">
-          <img src="{StandardURL}" alt="{CaptionText}">
-        </div>
+        <a href="{Link}">
+          <div class="col-md-4">
+            <img src="{StandardURL}" alt="{CaptionText}">
+          </div>
+        </a>
       {/gt}
 
     {/instagramTagged}
@@ -28,7 +32,7 @@
     </div>
     
   </div>
-  <a href="#">
+  <a href="{globals.instagram}">
     <div class="box-bottom">
       <span class="box-button">See all images</span>
     </div>

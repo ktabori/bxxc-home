@@ -1,5 +1,21 @@
 [
     {
+        "_id": "5345c744d3d70808bc290e3e",
+        "UserName": "BxxC Clan",
+        "Favorited": "False",
+        "RetweetCount": "0",
+        "URL": "https://twitter.com/bxxcclan/status/454020061783928833",
+        "Text": "Minecraft: Pocket Edition surpasses 21M copies sold - http://t.co/CZPzd036yl",
+        "UserScreenName": "bxxcclan",
+        "Retweeted": "False",
+        "UserDescription": "Game News & BxxC - Hungarian FPS Clan. Play like YOLO.",
+        "UserProfileImage": "http://pbs.twimg.com/profile_images/440100340025655297/g4THepN9_normal.png",
+        "UserFollowersCount": "2",
+        "UserID": "2360773571",
+        "FavoriteCount": "0",
+        "CreatedAt": "Wed Apr 09 22:16:32 +0000 2014"
+    },
+    {
         "_id": "5345948caf32381bffeec590",
         "UserName": "BxxC Clan",
         "Favorited": "False",
@@ -142,21 +158,5 @@
         "UserID": "2360773571",
         "FavoriteCount": "0",
         "CreatedAt": "Tue Apr 08 18:45:43 +0000 2014"
-    },
-    {
-        "_id": "53442f21ab2aef0ec8926f33",
-        "UserName": "BxxC Clan",
-        "Favorited": "False",
-        "RetweetCount": "0",
-        "URL": "https://twitter.com/bxxcclan/status/453581914478481408",
-        "Text": "Kinect Sports Rivals proves the Xbox One Kinect still isn't serious gaming hardware - http://t.co/aJYWx9Auks",
-        "UserScreenName": "bxxcclan",
-        "Retweeted": "False",
-        "UserDescription": "Game News & BxxC - Hungarian FPS Clan. Play like YOLO.",
-        "UserProfileImage": "http://pbs.twimg.com/profile_images/440100340025655297/g4THepN9_normal.png",
-        "UserFollowersCount": "2",
-        "UserID": "2360773571",
-        "FavoriteCount": "0",
-        "CreatedAt": "Tue Apr 08 17:15:30 +0000 2014"
     }
 ]

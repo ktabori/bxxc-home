@@ -15,10 +15,22 @@
           </div>
 
           <div class="col-md-3">
-            <a href="#" class="btn btn-primary btn-lg btn-block"> <span class="social youtube"></span> <span class="text">youtube<span></a>
-            <a href="#" class="btn btn-primary btn-lg btn-block"> <span class="social facebook"></span> <span class="text">facebook<span></a>
-            <a href="#" class="btn btn-primary btn-lg btn-block"> <span class="social twitter"></span> <span class="text">twitter<span></a>
-            <a href="#" class="btn btn-primary btn-lg btn-block"> <span class="social instagram"></span> <span class="text">instagram<span></a>
+            <a href="{globals.youtube}" class="btn btn-primary btn-lg btn-block"> 
+              <span class="social youtube"></span> 
+              <span class="text">youtube<span>
+            </a>
+            <a href="{globals.facebook}" class="btn btn-primary btn-lg btn-block"> 
+              <span class="social facebook"></span> 
+              <span class="text">facebook<span>
+            </a>
+            <a href="{globals.twitter}" class="btn btn-primary btn-lg btn-block"> 
+              <span class="social twitter"></span> 
+              <span class="text">twitter<span>
+            </a>
+            <a href="{globals.instagram}" class="btn btn-primary btn-lg btn-block">
+              <span class="social instagram"></span>
+              <span class="text">instagram<span>
+            </a>
           </div>
 
           {/gt}
