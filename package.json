@@ -45,6 +45,7 @@
     "schedule": "^0.1.0",
     "grunt-exec": "^0.4.5",
     "newrelic": "^1.4.0",
-    "twitter-text": "^1.9.0"
+    "twitter-text": "^1.9.0",
+    "robots.txt": "^1.0.0"
   }
 }

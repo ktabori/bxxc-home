@@ -4,12 +4,14 @@ bodyParser      = require 'body-parser'
 methodOverride  = require 'method-override'
 serveStatic     = require 'serve-static'
 morgan          = require 'morgan'
+robots          = require 'robots.txt'
 
 app.use compress()
 app.use bodyParser()
 app.use methodOverride()
 
 app.use '/assets', serveStatic(config.root + '/src/assets')
+app.use robots(config.root + '/src/assets/static/robot.txt')
 app.use morgan('dev')
 app.use favicon(config.root + '/src/assets/img/favicon.ico')
 
