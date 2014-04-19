@@ -1,15 +1,14 @@
 cron        = require 'schedule'
-mongodb     = require 'mongodb'
 touch       = require 'touch'
 fs          = require 'fs'
-MongoClient = mongodb.MongoClient
+request     = require 'request'
 
 fetchSocialData 'Initial run'
 
 if env == 'development'
-  periode     = '600s'
+  periode     = '5s'
 else
-  periode     = '1200s'
+  periode     = '5m'
 
 cron.every(periode).do -> 
   fetchSocialData periode

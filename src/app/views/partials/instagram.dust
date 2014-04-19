@@ -10,7 +10,7 @@
       {@gt key=6 value=$idx }
         <a href="{Link}">
           <div class="col-md-4 col-sm-4 col-xs-6">
-            <img src="{StandardURL}" alt="{CaptionText}">
+            <img src="{StandadRes}" alt="{Description}">
           </div>
         </a>
       {/gt}
@@ -22,7 +22,7 @@
       {@gt key=6 value=$idx }
         <a href="{Link}">
           <div class="col-md-4 col-sm-4 col-xs-6">
-            <img src="{StandardURL}" alt="{CaptionText}">
+            <img src="{StandadRes}" alt="{Description}">
           </div>
         </a>
       {/gt}

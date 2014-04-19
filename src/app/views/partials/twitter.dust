@@ -7,13 +7,13 @@
     
       {@gt key=3 value=$idx }
         <div class="twitter-holder">
-          <a href="{URL}">
+          <a href="{UserUrl}">
             <div class="twitter-meta">
-              <img class="twitter-avatar" src="{UserProfileImage}" alt="UserName" />
+              <img class="twitter-avatar" src="{UserAvatar}" alt="UserName" />
               <p class="twitter-username"><span>{UserName}</span><span>@{UserScreenName}</span></p>
             </div>
           </a>
-          <p class="tweet">{@link string="{Text}" /}</p>
+          <p class="tweet">{@link string="{Tweet}" /}</p>
         </div>
       {/gt}
 
