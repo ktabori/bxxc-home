@@ -2,7 +2,7 @@ class DataProvider
     api: config.api
 
     endpoints:
-        'frontpage'    : -> 'page/tv/front'
+        'frontpage'    : -> 'page/front'
 
     get: (endpoint, params, cb) ->
         @doRequest @api + @endpoints[endpoint](params), (data) -> cb data
