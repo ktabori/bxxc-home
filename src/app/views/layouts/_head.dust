@@ -42,7 +42,7 @@
   {/gt}
 {/twitter}
 
-<title>{globals.site_name}</title>
+<title>{globals.site_name} | VERSION: DIGOCEAN 2.0</title>
 
 <!-- styles start -->
 <link rel="stylesheet" href="/assets/css/core.css" />
