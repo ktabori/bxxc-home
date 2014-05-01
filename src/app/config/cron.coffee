@@ -6,6 +6,6 @@ periode     = 5 * 60000 #5 minute
 
 fetchSocialData
 
-setInterval (->
+setInterval (
   fetchSocialData
-), 5000
+), periode
