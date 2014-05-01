@@ -1,6 +1,6 @@
-fetchSocialData = (periode)->
+fetchSocialData = ()->
   console.log 'Fetching data from Vulp API'
-  console.log 'Periode: ' + periode + '(' + env + ')'
+  console.log 'ENV: (' + env + ')'
 
   fetchData = (url, filePath, fileName) ->
     console.log 'URL: ', url
