@@ -2,7 +2,7 @@ touch       = require 'touch'
 fs          = require 'fs'
 request     = require 'request'
 
-periode     = 5 * 60000 #5 minute
+periode     = 1 * 60000 #5 minute
 
 fetchSocialData
 
