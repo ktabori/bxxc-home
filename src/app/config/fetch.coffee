@@ -18,10 +18,12 @@ fetchSocialData = ()->
       else
         console.log error
 
-  fetchData 'http://api.vulp.li/bxxc/instagram/timeline', 'src/app/controllers/json/', 'instagram.json' 
-  fetchData 'http://api.vulp.li/bxxc/instagram/profile', 'src/app/controllers/json/', 'instagram_profile.json' 
-  fetchData 'http://api.vulp.li/bxxc/instagram/tag', 'src/app/controllers/json/', 'instagram_tagged.json' 
-  fetchData 'http://api.vulp.li/bxxc/twitter/timeline', 'src/app/controllers/json/', 'twitter.json' 
-  fetchData 'http://api.vulp.li/bxxc/twitter/profile', 'src/app/controllers/json/', 'twitter_profile.json' 
-  fetchData 'http://api.vulp.li/bxxc/youtube/uploads', 'src/app/controllers/json/', 'youtube.json' 
-  fetchData 'http://api.vulp.li/bxxc/youtube/profile', 'src/app/controllers/json/', 'instagram_profile.json' 
+  apiRoute = 'http://vulp.herokuapp.com/'
+
+  fetchData apiRoute + 'bxxc/instagram/timeline', 'src/app/controllers/json/', 'instagram.json' 
+  fetchData apiRoute + 'bxxc/instagram/profile', 'src/app/controllers/json/', 'instagram_profile.json' 
+  fetchData apiRoute + 'bxxc/instagram/tag', 'src/app/controllers/json/', 'instagram_tagged.json' 
+  fetchData apiRoute + 'bxxc/twitter/timeline', 'src/app/controllers/json/', 'twitter.json' 
+  fetchData apiRoute + 'bxxc/twitter/profile', 'src/app/controllers/json/', 'twitter_profile.json' 
+  fetchData apiRoute + 'bxxc/youtube/uploads', 'src/app/controllers/json/', 'youtube.json' 
+  fetchData apiRoute + 'bxxc/youtube/profile', 'src/app/controllers/json/', 'instagram_profile.json'
