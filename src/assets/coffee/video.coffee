@@ -1,4 +1,4 @@
-video = false
+video = true
 
 $(document).ready ->
   overlayImg = ->
@@ -44,7 +44,7 @@ else
       setTimeout (->
         BV.getPlayer().dispose()
       ), 3000
-    ), 25000
+    ), 60000
     
   $(document).ready ->
     loading = ->
@@ -117,7 +117,7 @@ $('.player').click ->
     autoPlay: true
     iframed: true
     onPlayerPlaying: ->
-      $('#overlay').fadeTo(2000, 0.8)
+      $('#overlay').fadeTo(2000, 0.9)
 
     onPlayerEnded: ->
       $(this).tubeplayer "destroy"
