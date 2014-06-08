@@ -1,4 +1,4 @@
-video = true
+video = false
 
 $(document).ready ->
   overlayImg = ->
