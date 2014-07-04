@@ -1,4 +1,5 @@
 video = false
+buildPlayer = false
 
 $(document).ready ->
   overlayImg = ->
@@ -98,33 +99,40 @@ $(".player").each ->
 
 $('.player').click ->
 
-  width = $(this).closest('.video-col').width()
-  width = width
-  ratio = 480/270
-  height = Math.round(width/ratio)
-  bigger = 480/width
+  if buildPlayer is false
+    video = $(this).attr("data-video")
+    url = 'http://youtube.com/v/' + video + '?autoplay=1'
+    name = '_blank'
+    specs = 'width=830, height=465, location=no, menubar=no, resizable=yes, scrollbars=no, status=no, titlebar=no, toolbar=no'
+    window.open(url, name, specs)
+  else
+    width = $(this).closest('.video-col').width()
+    width = width
+    ratio = 480/270
+    height = Math.round(width/ratio)
+    bigger = 480/width
 
-  video = $(this).attr("data-video")
-  destroyAll video
+    video = $(this).attr("data-video")
+    destroyAll video
 
-  $(this).tubeplayer
-    width: width
-    height: height
-    allowFullScreen: false
-    initialVideo: video
-    theme: "light"
-    color: "white"
-    autoPlay: true
-    iframed: true
-    onPlayerPlaying: ->
-      $('#overlay').fadeTo(2000, 0.9)
+    $(this).tubeplayer
+      width: width
+      height: height
+      allowFullScreen: false
+      initialVideo: video
+      theme: "light"
+      color: "white"
+      autoPlay: true
+      iframed: true
+      onPlayerPlaying: ->
+        $('#overlay').fadeTo(2000, 0.9)
 
-    onPlayerEnded: ->
-      $(this).tubeplayer "destroy"
-      $('#overlay').fadeTo(2000, 0.4)
+      onPlayerEnded: ->
+        $(this).tubeplayer "destroy"
+        $('#overlay').fadeTo(2000, 0.4)
 
-    onPlayerPaused: ->
-      $('#overlay').fadeTo(2000, 0.4)
+      onPlayerPaused: ->
+        $('#overlay').fadeTo(2000, 0.4)
 
 $(window).resize ->
   destroyAll()
