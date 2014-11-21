@@ -27,3 +27,4 @@ fetchSocialData = ()->
   fetchData apiRoute + 'bxxc/twitter/profile', 'src/app/controllers/json/', 'twitter_profile.json' 
   fetchData apiRoute + 'bxxc/youtube/uploads', 'src/app/controllers/json/', 'youtube.json' 
   fetchData apiRoute + 'bxxc/youtube/profile', 'src/app/controllers/json/', 'instagram_profile.json'
+  fetchData apiRoute + 'bxxc/xbox', 'src/app/controllers/json/', 'xbox.json'

@@ -2,6 +2,7 @@ class Router
     routes:
         #Main pages
         '/'  :  'index'
+        '/video' : 'video'
 
     constructor: ->
         @app = express.Router()

@@ -1,0 +1,39 @@
+{>"layouts/master" pageName="frontpage"/}
+
+{<body}
+
+  <div class="content">
+    <div class="container">
+
+      <table>
+
+        {#Persons}
+          <h2>Gamertag: {Profile.Gamertag}</h2>
+          <h2>Gamerscore: {Profile.Gamerscore}</h2>
+          <h2>TotalKills: {AWStats.TotalKills}</h2>
+          <h2>KD Ratio: {AWStats.KDRatio}</h2>
+          
+          {?GameCaptures}
+            <h3>Clips:</h3>
+            <ul>
+            {#GameCaptures}
+              {#Clips}
+                {@eq key="{UriType}" value="Download"}
+                  <li><a href="{Uri}">Video</a></li>
+                {/eq}
+              {/Clips}
+            {/GameCaptures}
+            </ul>
+          {/GameCaptures}
+
+          <hr />
+          <br />
+
+        {/Persons}
+
+      </table>
+
+    </div>
+  </div>
+
+{/body}
