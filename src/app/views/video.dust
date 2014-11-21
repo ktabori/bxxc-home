@@ -17,10 +17,12 @@
             <h3>Clips:</h3>
             <ul>
             {#GameCaptures}
-              {#Clips}
-                {@eq key="{UriType}" value="Download"}
-                  <li><a href="{Uri}">Video</a></li>
-                {/eq}
+              {?Clips}
+                {#Clips}
+                  {@eq key="{UriType}" value="Download"}
+                    <li><a href="{Uri}">Video</a></li>
+                  {/eq}
+                {/Clips}
               {/Clips}
             {/GameCaptures}
             </ul>
