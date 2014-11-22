@@ -5528,6 +5528,7 @@ Init = function() {
         this.$overlay = $("#overlay");
         this.randomBackground();
         this.outdated();
+        this.download();
     }
     Init.prototype.randomBackground = function() {
         var backgroundUri, randomNumber;
@@ -5542,6 +5543,15 @@ Init = function() {
             lowerThan: "transform",
             languagePath: "public/libs/lang/en.html"
         });
+    };
+    Init.prototype.download = function() {
+        var hash;
+        hash = location.hash;
+        if (hash === "#download" || hash === "#d") {
+            return $(".btn-download").each(function() {
+                return $(this).removeClass("hidden");
+            });
+        }
     };
     return Init;
 }();

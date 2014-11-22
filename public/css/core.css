@@ -9917,8 +9917,9 @@ body {
   background-size: cover;
   margin-top: 30px;
 }
-.gamer-description-container {
-  margin-top: 30px;
+.gamer-description-container td {
+  width: 50%;
+  padding-bottom: 10px;
 }
 .gamer-description {
   color: white;
@@ -9946,9 +9947,52 @@ body {
 .gamer-description .desc-content {
   font-family: "Exo2-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.video-col {
+  overflow: hidden;
+}
+.video-col .btn-container {
+  position: absolute;
+  z-index: 999;
+  border-color: transparent rgba(46, 204, 113, 0.5) transparent transparent;
+  border-style: solid;
+  border-width: 70px;
+  right: 15px;
+  top: -70px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.video-col .btn-container .glyphicons {
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding-left: 25px;
+  position: absolute;
+  top: 5px;
+  left: 40px;
+}
+.video-col .btn-container .glyphicons:before {
+  color: rgba(52, 73, 94, 0.7);
+  padding: 0;
+  font-size: 23px;
+  line-height: 23px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.video-col .btn-container:hover {
+  border-color: transparent rgba(46, 204, 113, 0.7) transparent transparent;
+}
+.video-col .btn-container:hover .glyphicons:before {
+  color: #34495e;
+}
 .separator {
   border-bottom: 1px solid rgba(46, 204, 113, 0.7);
-  margin-top: 30px;
 }
 a {
   color: #2ecc71;
@@ -9965,12 +10009,18 @@ a:hover {
 p {
   margin-bottom: 0;
 }
-@media (max-width: 1199px) {
+@media (min-width: 992px) {
   .md-10 {
     padding-top: 10px;
   }
   .md-20 {
     padding-top: 20px;
+  }
+  .md-30 {
+    padding-top: 30px;
+  }
+  .video-container .video-col {
+    max-height: 242px;
   }
 }
 @media (max-width: 991px) {
@@ -9995,6 +10045,10 @@ p {
   [class*='col'] {
     padding-left: 5px;
     padding-right: 5px;
+  }
+  .video-container .video-col {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .content {

@@ -2,6 +2,9 @@ extends layout
 
 mixin videoItem(source, title, desc, poster)
   .col-md-6.col-sm-6.col-xs-12.video-col
+    a.btn-download.hidden(href=source, target='_blank', download)
+        div.btn-container
+          span.glyphicons.disk_save
     video#a240e92d.sublime(poster=poster, width='640', height='360', title=title, data-sharing-title=title, data-autoresize='fit', preload='none')
       source(src=source, type='video/mp4')
 
@@ -20,63 +23,66 @@ block content
             h2= User.Profile.Gamertag
 
             .img-holder
-              .row
-                .col-md-2.col-sm-4.col-xs-6.col-md-offset-0.col-sm-offset-0.col-xs-offset-3
-                  img.img-circle.user-avatar(src=User.Profile.AppDisplayPicRaw)
+              .col-lg-2.col-md-2.col-sm-4.col-xs-6.col-md-offset-0.col-sm-offset-0.col-xs-offset-3
+                img.img-circle.user-avatar(src=User.Profile.AppDisplayPicRaw)
 
-                .col-md-5.col-sm-4.col.col-xs-12
-                  .gamer-description-container
-                    table.gamer-description
-                      tr
-                        td
-                          span.glyphicons.record
-                          span.desc-title Gamer Points
-                        td
-                          span.desc-content= User.Profile.Gamerscore
-                      tr
-                        td
-                          span.glyphicons.bullets
-                          span.desc-title Total Kills
-                        td
-                          span.desc-content= User.AWStats.TotalKills
-                      tr
-                        td
-                          span.glyphicons.skull
-                          span.desc-title KD Ratio
-                        td
-                          span.desc-content= User.AWStats.KDRatio
+              .col-xs-12.visible-xs
+                .separator.xs-20
 
-                .col-md-5.col-sm-4.col.col-xs-12
-                  .gamer-description-container
-                    table.gamer-description
-                      tr
-                        td
-                          span.glyphicons.git_commit
-                          span.desc-title Prestige
-                        td
-                          span.desc-content= User.AWStats.PlayerPrestige
-                      tr
-                        td
-                          span.glyphicons.crown
-                          span.desc-title Total Wins
-                        td
-                          span.desc-content= User.AWStats.TotalWins
-                      tr
-                        td
-                          span.glyphicons.clock
-                          span.desc-title Played
-                        td
-                          span.desc-content= User.AWStats.MinutesPlayed + ' MINS'
+              .col-md-5.col-sm-8.col.col-xs-12.xs-10.sm-20.md-30
+                .gamer-description-container.xs-10
+                  table.gamer-description
+                    tr
+                      td
+                        span.glyphicons.record
+                        span.desc-title Gamer Points
+                      td
+                        span.desc-content= User.Profile.Gamerscore
+                    tr
+                      td
+                        span.glyphicons.bullets
+                        span.desc-title Total Kills
+                      td
+                        span.desc-content= User.AWStats.TotalKills
+                    tr
+                      td
+                        span.glyphicons.skull
+                        span.desc-title KD Ratio
+                      td
+                        span.desc-content= User.AWStats.KDRatio
 
-                .col-md-10.col-sm-8.col.col-xs-12
-                  .separator
+              .col-md-5.col-sm-8.col.col-xs-12.md-30
+                .gamer-description-container
+                  table.gamer-description
+                    tr
+                      td
+                        span.glyphicons.git_commit
+                        span.desc-title Prestige
+                      td
+                        span.desc-content= User.AWStats.PlayerPrestige
+                    tr
+                      td
+                        span.glyphicons.crown
+                        span.desc-title Total Wins
+                      td
+                        span.desc-content= User.AWStats.TotalWins
+                    tr
+                      td
+                        span.glyphicons.clock
+                        span.desc-title Played
+                      td
+                        span.desc-content= User.AWStats.MinutesPlayed + ' MINS'
 
-                  .row
-                    each e, i in User.GameCaptures
-                      if e.TitleId != 1689264723
-                        each c, i in e.Clips
-                          if c.UriType == 'Download'
-                            +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
+              .col-md-10.col-sm-8.col-xs-12.col-md-offset-2.col-sm-offset-4.col-xs-offset-0
+                .separator.xs-10
+
+              .col-lg-10.col-md-10.col-sm-8.col-xs-12.col-md-offset-2.col-sm-offset-4.col-xs-offset-0.video-container
+                .row
+                  each e, i in User.GameCaptures
+                    if e.TitleId != 1689264723
+                      each c, ii in e.Clips
+                        if c.UriType == 'Download'
+                          +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
 
 
 

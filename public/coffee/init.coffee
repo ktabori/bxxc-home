@@ -6,6 +6,7 @@ class Init
 
     @randomBackground()
     @outdated()
+    @download()
 
   randomBackground: ->
     randomNumber  = Math.floor(Math.random() * 50) + 1
@@ -18,6 +19,13 @@ class Init
       color: "#ffffff"
       lowerThan: "transform"
       languagePath: "public/libs/lang/en.html"
+
+  download: ->
+    hash = location.hash
+
+    if hash is '#download' or hash is '#d'
+      $('.btn-download').each ->
+        $(this).removeClass('hidden')
 
 $(document).ready ->
   new Init()
