@@ -13,69 +13,70 @@ block content
         .logo-staff
 
   each User, i in Persons
-    .row
-      .col-md-12.col-sm-12.col-xs-12
-        .box.youtube
-          h2= User.Profile.Gamertag
+    if User.Profile.Gamertag.indexOf('Yooo') != 0
+      .row
+        .col-md-12.col-sm-12.col-xs-12
+          .box.youtube
+            h2= User.Profile.Gamertag
 
-          .img-holder
-            .row
-              .col-md-2.col-sm-4.col-xs-6.col-md-offset-0.col-sm-offset-0.col-xs-offset-3
-                img.img-circle.user-avatar(src=User.Profile.AppDisplayPicRaw)
+            .img-holder
+              .row
+                .col-md-2.col-sm-4.col-xs-6.col-md-offset-0.col-sm-offset-0.col-xs-offset-3
+                  img.img-circle.user-avatar(src=User.Profile.AppDisplayPicRaw)
 
-              .col-md-5.col-sm-4.col.col-xs-12
-                .gamer-description-container
-                  table.gamer-description
-                    tr
-                      td
-                        span.glyphicons.record
-                        span.desc-title Gamer Points
-                      td
-                        span.desc-content= User.Profile.Gamerscore
-                    tr
-                      td
-                        span.glyphicons.bullets
-                        span.desc-title Total Kills
-                      td
-                        span.desc-content= User.AWStats.TotalKills
-                    tr
-                      td
-                        span.glyphicons.skull
-                        span.desc-title KD Ratio
-                      td
-                        span.desc-content= User.AWStats.KDRatio
+                .col-md-5.col-sm-4.col.col-xs-12
+                  .gamer-description-container
+                    table.gamer-description
+                      tr
+                        td
+                          span.glyphicons.record
+                          span.desc-title Gamer Points
+                        td
+                          span.desc-content= User.Profile.Gamerscore
+                      tr
+                        td
+                          span.glyphicons.bullets
+                          span.desc-title Total Kills
+                        td
+                          span.desc-content= User.AWStats.TotalKills
+                      tr
+                        td
+                          span.glyphicons.skull
+                          span.desc-title KD Ratio
+                        td
+                          span.desc-content= User.AWStats.KDRatio
 
-              .col-md-5.col-sm-4.col.col-xs-12
-                .gamer-description-container
-                  table.gamer-description
-                    tr
-                      td
-                        span.glyphicons.git_commit
-                        span.desc-title Prestige
-                      td
-                        span.desc-content= User.AWStats.PlayerPrestige
-                    tr
-                      td
-                        span.glyphicons.crown
-                        span.desc-title Total Wins
-                      td
-                        span.desc-content= User.AWStats.TotalWins
-                    tr
-                      td
-                        span.glyphicons.clock
-                        span.desc-title Played
-                      td
-                        span.desc-content= User.AWStats.MinutesPlayed + ' MINS'
+                .col-md-5.col-sm-4.col.col-xs-12
+                  .gamer-description-container
+                    table.gamer-description
+                      tr
+                        td
+                          span.glyphicons.git_commit
+                          span.desc-title Prestige
+                        td
+                          span.desc-content= User.AWStats.PlayerPrestige
+                      tr
+                        td
+                          span.glyphicons.crown
+                          span.desc-title Total Wins
+                        td
+                          span.desc-content= User.AWStats.TotalWins
+                      tr
+                        td
+                          span.glyphicons.clock
+                          span.desc-title Played
+                        td
+                          span.desc-content= User.AWStats.MinutesPlayed + ' MINS'
 
-              .col-md-10.col-sm-8.col.col-xs-12
-                .separator
+                .col-md-10.col-sm-8.col.col-xs-12
+                  .separator
 
-                .row
-                  each e, i in User.GameCaptures
-                    if e.TitleId != 1689264723
-                      each c, i in e.Clips
-                        if c.UriType == 'Download'
-                          +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
+                  .row
+                    each e, i in User.GameCaptures
+                      if e.TitleId != 1689264723
+                        each c, i in e.Clips
+                          if c.UriType == 'Download'
+                            +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
 
 
 
