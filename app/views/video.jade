@@ -72,9 +72,10 @@ block content
 
                 .row
                   each e, i in User.GameCaptures
-                    each c, i in e.Clips
-                      if c.UriType == 'Download'
-                        +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
+                    if e.TitleId != 1689264723
+                      each c, i in e.Clips
+                        if c.UriType == 'Download'
+                          +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
 
 
 
