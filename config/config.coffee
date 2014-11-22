@@ -25,7 +25,7 @@ config =
     root: rootPath
     app:
       name: 'bxxc'
-    port: 3000
+    port: process.env.PORT || 3000
     api: 'http://vulp.li/bxxc/all'
     db: 'mongodb://bxxc_mongo:NNG7Jgoo4b@dogen.mongohq.com:10064/bxxc'
 
