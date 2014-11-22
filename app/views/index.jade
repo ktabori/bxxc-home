@@ -1,0 +1,104 @@
+extends layout
+
+mixin imageItem(link, img)
+  a(href=link)
+    .col-md-4.col-sm-4.col-xs-6
+      img(src=img)
+
+mixin twitterItem(link, avatar, username, userscreen, tweet)
+  .twitter-holder
+    a(href=link)
+      .twitter-meta
+        img.twitter-avatar(src=avatar)
+        p.twitter-username
+          span=username
+          span='@' + userscreen
+    p.tweet!=twitterText(tweet)
+
+mixin youtubeItem(yid, title, desc, poster)
+  .col-md-6.col-sm-6.col-xs-12.video-col
+    video#4tIiWVATbkM.sublime(poster=poster, width='640', height='360', title=title, data-sharing-title=title, data-sharing-text=desc, data-sharing-twitter-text=desc, data-uid=yid, data-youtube-id=yid, data-autoresize='fit', preload='none')
+
+
+block content
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      a(href='/')
+        .logo
+
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      .section
+
+        .row
+          .col-md-6.col-sm-12.co-xs-12.video-col
+            video#4tIiWVATbkM.sublime(poster='http://bxxc.s3.amazonaws.com/4tIiWVATbkM.jpg', width='640', height='360', title='BxxC Promo', data-sharing-title='BxxC Promo', data-sharing-text='Clan promo for bxxc...', data-sharing-twitter-text='Clan promo for bxxc...', data-uid='4tIiWVATbkM', data-youtube-id='4tIiWVATbkM', data-autoresize='fit', preload='none')
+
+          .col-md-3.col-sm-6.sm-20.col-xs-12.xs-10
+            p Clan montage in Call of Duty: Black Ops II. Thanks for watching and remember to keep calm and subscribe us.
+
+          .col-md-3.col-sm-6.sm-20.col-xs-12.xs-10
+            a.btn.btn-primary.btn-lg.btn-block(href=globals.youtube)
+              span.social.youtube
+              span.text youtube
+
+            a.btn.btn-primary.btn-lg.btn-block(href=globals.facebook)
+              span.social.facebook
+              span.text facebook
+
+            a.btn.btn-primary.btn-lg.btn-block(href=globals.twitter)
+              span.social.twitter
+              span.text twitter
+
+            a.btn.btn-primary.btn-lg.btn-block(href=globals.instagram)
+              span.social.instagram
+              span.text instagram
+
+  .row
+    .col-md-8.col-sm-12.col-xs-12
+      .box
+        h2 Instagram
+          span.sub.pull-right #bxxcclan
+
+        .img-holder
+          each e, i in InstagramTag
+            if i < 6
+              +imageItem(e.Link, e.StandadRes)
+
+          each e, i in InstagramTimeline
+            if i < 6
+              +imageItem(e.Link, e.StandadRes)
+      a(href=globals.instagram)
+        .box-bottom
+          span.box-button See all images
+
+    .col-md-4.col-sm-12.col-xs-12
+      .box.twitter
+        h2 twitter
+
+        each e, i in TwitterTimeline
+          if i < 4
+            +twitterItem(e.UserUrl, e.UserAvatar, e.UserName, e.UserScreenName, e.Tweet)
+
+      a(href=globals.twitter)
+        .box-bottom
+          span.box-button See all tweets
+
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      .box.youtube
+        h2 Youtube
+
+        .img-holder
+          each e, i in YoutubeUploads
+            if i < 8
+              +youtubeItem(e.Id, e.Title, e.Description, 'http://bxxc.s3.amazonaws.com/' + e.Id + '.jpg')
+
+  a(href=globals.youtube)
+    .box-bottom
+      span.box-button See all videos
+
+
+
+
+

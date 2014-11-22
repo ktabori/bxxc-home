@@ -1,0 +1,153 @@
+.section {
+  background: @id-1-glass;
+  padding: 30px 30px;
+  margin-top: 30px;
+  overflow: hidden;
+
+  .col {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  p {
+    font-family: @exo-regular;
+    font-size: 18px;
+    color: white;
+    line-height: 1.7;
+    margin-top: -7px;
+    text-align: justify;
+  }
+
+  .video {
+    width: 50%;
+  }
+
+  .description {
+    width: 25%;
+  }
+}
+
+.box {
+  background: rgba( 0, 0, 0, .6 );
+  box-sizing: border-box;
+  margin-top: 30px;
+  overflow: hidden;
+  padding-bottom: 30px;
+
+  h2 {
+    padding: 15px;
+    font-family: @exo-light;
+    margin: 0;
+    font-size: 22px;
+    color: @id-1;
+    text-transform: uppercase;
+    border-bottom: 1px solid @id-1-glass;
+  }
+
+  .img-holder {
+    padding: 0 15px;
+  }
+
+  &.twitter {
+    padding-bottom: 0px;
+  }
+
+  &.youtube {
+    .video-col {
+      margin-top: 30px;
+    }
+  }
+
+  .twitter-holder {
+    padding: 30px;
+    border-bottom: 1px solid @id-1-glass;
+
+    &:last-child {
+      border: none;
+    }
+
+    p.tweet {
+      margin-bottom: 0px;
+      margin-top: 15px;
+      text-align: left;
+      color: white;
+      font-family: @exo-regular;
+      font-size: 16px;
+    }
+  }
+
+  img {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .twitter-meta {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .twitter-avatar {
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin-top: 0;
+  }
+
+  .twitter-username {
+    span {
+      color: white;
+      background: @id-1;
+      padding: 3px;
+      float: left;
+      font-family: @exo-regular;
+      margin-left: 15px;
+    }
+  }
+}
+
+.box-bottom {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background: @id-1;
+  text-align: center;
+  .transition();
+
+  &:hover {
+    background: @id-1-glass;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  
+  .box {
+    padding-bottom: 10px;
+
+    .img-holder {
+      padding: 0 5px;
+    }
+
+    img {
+      margin-top: 10px;
+    }
+
+    .twitter-holder {
+      padding: 10px;
+    }
+
+    &.youtube {
+      .video-col {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .section {
+    padding: 10px 20px;
+
+    p {
+      line-height: 1.4;
+    }
+  }
+}

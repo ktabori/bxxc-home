@@ -1,0 +1,87 @@
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// Reset and dependencies
+@import "core/normalize.less";
+@import "core/print.less";
+
+// Fonts
+@import "typo/Exo2-ExtraLight.less";
+@import "typo/Exo2-Regular.less";
+@import "typo/Exo2-SemiBold.less";
+@import "typo/filetypes.less";
+@import "typo/glyphicons.less";
+@import "typo/social.less";
+@import "typo/Voyagergrotesque.less";
+@import "typo/VoyagerGrotesqueBold.less";
+@import "typo/VoyagerGrotesqueLight.less";
+
+// Core CSS
+@import "core/scaffolding.less";
+@import "core/type.less";
+@import "core/code.less";
+@import "core/grid.less";
+@import "core/tables.less";
+@import "core/forms.less";
+@import "core/buttons.less";
+
+// Components
+@import "core/component-animations.less";
+@import "core/dropdowns.less";
+@import "core/button-groups.less";
+@import "core/input-groups.less";
+@import "core/navs.less";
+@import "core/navbar.less";
+@import "core/breadcrumbs.less";
+@import "core/pagination.less";
+@import "core/pager.less";
+@import "core/labels.less";
+@import "core/badges.less";
+@import "core/jumbotron.less";
+@import "core/thumbnails.less";
+@import "core/alerts.less";
+@import "core/progress-bars.less";
+@import "core/media.less";
+@import "core/list-group.less";
+@import "core/panels.less";
+@import "core/responsive-embed.less";
+@import "core/wells.less";
+@import "core/close.less";
+@import "core/outdated.less";
+
+// Components w/ JavaScript
+@import "core/modals.less";
+@import "core/tooltip.less";
+@import "core/popovers.less";
+@import "core/carousel.less";
+
+// Utility classes
+@import "core/utilities.less";
+@import "core/responsive-utilities.less";
+
+// BxxC theme
+@import "bxxc/base.less";
+@import "bxxc/video_bg.less";
+@import "bxxc/section.less";
+@import "bxxc/player.less";
+@import "bxxc/button.less";
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+#overlay {
+  background: rgba(52, 73, 94, 0.3);
+  width: 100%;
+  height: 120%;
+  margin-top: -20px;
+}
