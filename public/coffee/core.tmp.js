@@ -5,8 +5,8 @@ Init = (function() {
     this.$background = $('#background');
     this.$overlay = $('#overlay');
     this.randomBackground();
-    this.outdated();
     this.download();
+    this.svgIcons();
   }
 
   Init.prototype.randomBackground = function() {
@@ -14,15 +14,6 @@ Init = (function() {
     randomNumber = Math.floor(Math.random() * 50) + 1;
     backgroundUri = "url(/img/bg/" + randomNumber + ".png) no-repeat center center fixed";
     return this.$background.css("background", backgroundUri);
-  };
-
-  Init.prototype.outdated = function() {
-    return outdatedBrowser({
-      bgColor: "#f25648",
-      color: "#ffffff",
-      lowerThan: "transform",
-      languagePath: "public/libs/lang/en.html"
-    });
   };
 
   Init.prototype.download = function() {
@@ -33,6 +24,17 @@ Init = (function() {
         return $(this).removeClass('hidden');
       });
     }
+  };
+
+  Init.prototype.svgIcons = function() {
+    return new svgIcon(document.querySelector(".si-icon-hamburger-cross"), svgIconConfig, {
+      speed: 400,
+      easing: mina.elastic,
+      size: {
+        w: 32,
+        h: 32
+      }
+    });
   };
 
   return Init;

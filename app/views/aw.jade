@@ -1,5 +1,7 @@
 extends layout
 
+-var page = 'Clips'
+
 mixin videoItem(source, title, desc, poster)
   .col-md-6.col-sm-6.col-xs-12.video-col
     a.btn-download.hidden(href=source, target='_blank', download)
@@ -10,10 +12,10 @@ mixin videoItem(source, title, desc, poster)
 
 block content
 
-  .row
+  .row.hidden-xs.md-20
     .col-md-12.col-sm-12.col-xs-12
       a(href='/')
-        .logo-staff
+        .logo
 
   each User, i in Persons
     if User.Profile.Gamertag.indexOf('Yooo') != 0
@@ -79,7 +81,7 @@ block content
               .col-lg-10.col-md-10.col-sm-8.col-xs-12.col-md-offset-2.col-sm-offset-4.col-xs-offset-0.video-container
                 .row
                   each e, i in User.GameCaptures
-                    if e.TitleId != 1689264723
+                    if e.TitleId == 875417719
                       each c, ii in e.Clips
                         if c.UriType == 'Download'
                           +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)

@@ -5,20 +5,13 @@ class Init
     @$overlay = $('#overlay')
 
     @randomBackground()
-    @outdated()
     @download()
+    @svgIcons()
 
   randomBackground: ->
     randomNumber  = Math.floor(Math.random() * 50) + 1
     backgroundUri = "url(/img/bg/#{randomNumber}.png) no-repeat center center fixed"
     @$background.css "background", backgroundUri
-
-  outdated: ->
-    outdatedBrowser
-      bgColor: "#f25648"
-      color: "#ffffff"
-      lowerThan: "transform"
-      languagePath: "public/libs/lang/en.html"
 
   download: ->
     hash = location.hash
@@ -26,6 +19,15 @@ class Init
     if hash is '#download' or hash is '#d'
       $('.btn-download').each ->
         $(this).removeClass('hidden')
+
+  svgIcons: ->
+    new svgIcon(document.querySelector(".si-icon-hamburger-cross"), svgIconConfig,
+      speed : 400
+      easing : mina.elastic
+      size :
+        w : 32
+        h : 32
+    )
 
 $(document).ready ->
   new Init()

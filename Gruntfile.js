@@ -42,8 +42,11 @@ module.exports = function (grunt) {
           beautify: true
         },
         files: { 'public/js/core.js':
-          [ 'public/libs/jquery-2.1.1.js',
-            'public/libs/outdatedbrowser.js',
+          [ 'public/libs/snap-svg.js',
+            'public/libs/jquery-2.1.1.js',
+            'public/libs/collapse.js',
+            'public/libs/svg-icons-config.js',
+            'public/libs/svg-icons.js',
             'public/coffee/core.tmp.js'
           ]
         }

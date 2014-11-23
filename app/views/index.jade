@@ -1,5 +1,7 @@
 extends layout
 
+-var page = 'Home'
+
 mixin imageItem(link, img)
   a(href=link)
     .col-md-4.col-sm-4.col-xs-6
@@ -21,7 +23,7 @@ mixin youtubeItem(yid, title, desc, poster)
 
 
 block content
-  .row
+  .row.hidden-xs.md-20
     .col-md-12.col-sm-12.col-xs-12
       a(href='/')
         .logo
