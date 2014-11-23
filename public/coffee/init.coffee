@@ -10,7 +10,7 @@ class Init
 
   randomBackground: ->
     randomNumber  = Math.floor(Math.random() * 50) + 1
-    backgroundUri = "url(/img/bg/#{randomNumber}.png) no-repeat center center fixed"
+    backgroundUri = "url(/img/bg/#{randomNumber}.jpeg) no-repeat center center fixed"
     @$background.css "background", backgroundUri
 
   download: ->
