@@ -10479,6 +10479,9 @@ p {
   font-size: 22px;
   text-transform: uppercase;
 }
+body {
+  background: #222222;
+}
 #background {
   position: fixed;
   top: 0;
