@@ -81,14 +81,10 @@ block content
               .col-lg-10.col-md-10.col-sm-8.col-xs-12.col-md-offset-2.col-sm-offset-4.col-xs-offset-0.video-container
                 .row
 
-                  script.
-                    var counter = 0
-
-                  each e, i in User.GameCaptures
-                    if e.TitleId == 875417719
-                      each c, ii in e.Clips
-                        if c.UriType == 'Download'
-                          +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
+                  each e, i in User.AWCaptures
+                    each c, ii in e.Clips
+                      if c.UriType == 'Download'
+                        +videoItem(c.Uri, e.TitleName, e.UserCaption, e.Thumbnails[1].Uri)
 
 
 
