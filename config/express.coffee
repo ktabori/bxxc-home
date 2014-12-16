@@ -1,13 +1,14 @@
-express = require 'express'
-glob = require 'glob'
-favicon = require 'serve-favicon'
-logger = require 'morgan'
-cookieParser = require 'cookie-parser'
-bodyParser = require 'body-parser'
-compress = require 'compression'
-methodOverride = require 'method-override'
-twitterText = require 'twitter-text'
-fs = require 'fs'
+express         = require 'express'
+glob            = require 'glob'
+favicon         = require 'serve-favicon'
+logger          = require 'morgan'
+cookieParser    = require 'cookie-parser'
+bodyParser      = require 'body-parser'
+compress        = require 'compression'
+methodOverride  = require 'method-override'
+twitterText     = require 'twitter-text'
+fs              = require 'fs'
+moment          = require 'moment'
 
 module.exports = (app, config) ->
   app.set 'views', config.root + '/app/views'
@@ -35,6 +36,10 @@ module.exports = (app, config) ->
   app.locals.twitterText = (text) ->
     string = twitterText.autoLink text
 
+  app.locals.formatMinutes = (t) ->
+    mins = moment.duration t, 'minutes'
+    result = mins.humanize()
+    
 
   controllers = glob.sync config.root + '/app/controllers/**/*.coffee'
   controllers.forEach (controller) ->

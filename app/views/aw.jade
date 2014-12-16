@@ -73,8 +73,8 @@ block content
                         span.glyphicons.clock
                         span.desc-title Played
                       td
-                        span.desc-content= User.AWStats.MinutesPlayed + ' MINS'
-
+                        span.desc-content!=formatMinutes(User.AWStats.MinutesPlayed)
+                        
               .col-md-10.col-sm-8.col-xs-12.col-md-offset-2.col-sm-offset-4.col-xs-offset-0
                 .separator.xs-10
 
