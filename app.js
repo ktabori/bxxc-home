@@ -1,4 +1,7 @@
 require('coffee-script/register');
+Memcached = require('memcached');
+
+memcached = new Memcached('pub-memcache-19180.eu-west-1-2.1.ec2.garantiadata.com:19180', {retries:10,retry:10000,remove:true});
 
 var express = require('express'),
   config = require('./config/config'),
