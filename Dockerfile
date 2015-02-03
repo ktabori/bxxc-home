@@ -1,11 +1,16 @@
 FROM dockerfile/nodejs
 
+WORKDIR /data
+
 RUN npm install -g grunt-cli
 RUN npm install -g forever
 
-# Define working directory.
-WORKDIR /data
+ADD package.json /data/package.json RUN npm install
 
-# Define default command.
-RUN npm install .; grunt prod
-CMD NODE_ENV="production" forever start app.js
+ADD . /data
+
+ENV NODE_ENV production
+
+EXPOSE 1901
+
+CMD ["grunt prod", "forever start app.js"]
