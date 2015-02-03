@@ -4,7 +4,6 @@ Init = (function() {
   function Init() {
     this.$background = $('#background');
     this.$overlay = $('#overlay');
-    this.randomBackground();
     this.download();
     this.svgIcons();
   }

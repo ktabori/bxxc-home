@@ -4,7 +4,7 @@ class Init
     @$background = $('#background')
     @$overlay = $('#overlay')
 
-    @randomBackground()
+    #@randomBackground()
     @download()
     @svgIcons()
 
