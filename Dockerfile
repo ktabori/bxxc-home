@@ -14,4 +14,4 @@ EXPOSE 80
 
 WORKDIR /srv/www
 
-CMD NODE_ENV="production" forever app.js
+CMD NODE_ENV="production" forever start app.js
