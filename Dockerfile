@@ -14,9 +14,7 @@ RUN npm install -g forever
 
 RUN mkdir /srv/www/
 ADD . /srv/www/
-RUN cd /srv/www/
-RUN npm install
-RUN grunt prod
+RUN cd /srv/www/; npm install .; grunt prod
 
 EXPOSE 1901
 
