@@ -3,7 +3,7 @@ FROM dockerfile/ubuntu
 
 
 RUN apt-get update
-RUN apt-get install git build-essential curl nodejs
+RUN apt-get -y install git build-essential curl nodejs
 RUN apt-get clean 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN node -v
