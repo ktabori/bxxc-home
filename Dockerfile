@@ -1,4 +1,4 @@
-FROM stackbrew/ubuntu:trusty
+FROM octohost/nodejs_ruby_1.9
 
 RUN mkdir /srv/www/
 RUN apt-get update && apt-get -y install git build-essential curl && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
