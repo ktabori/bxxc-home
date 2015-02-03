@@ -3,10 +3,11 @@ FROM dockerfile/ubuntu
 
 
 RUN apt-get update
-RUN apt-get -y install git build-essential curl nodejs
+RUN apt-get install git build-essential curl nodejs
 RUN apt-get clean 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+RUN node -v
+RUN npm -v
 
 RUN npm install -g grunt-cli
 RUN npm install -g forever
