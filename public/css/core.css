@@ -9903,6 +9903,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#background {
+  background: url(/img/bg/7.jped);
+}
 .navbar {
   margin-bottom: 0;
 }

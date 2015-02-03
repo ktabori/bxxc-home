@@ -9,13 +9,6 @@ Init = (function() {
     this.svgIcons();
   }
 
-  Init.prototype.randomBackground = function() {
-    var backgroundUri, randomNumber;
-    randomNumber = Math.floor(Math.random() * 50) + 1;
-    backgroundUri = "url(/img/bg/" + randomNumber + ".jpeg) no-repeat center center fixed";
-    return this.$background.css("background", backgroundUri);
-  };
-
   Init.prototype.download = function() {
     var hash;
     hash = location.hash;

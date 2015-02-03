@@ -8,10 +8,10 @@ class Init
     @download()
     @svgIcons()
 
-  randomBackground: ->
-    randomNumber  = Math.floor(Math.random() * 50) + 1
-    backgroundUri = "url(/img/bg/#{randomNumber}.jpeg) no-repeat center center fixed"
-    @$background.css "background", backgroundUri
+  #randomBackground: ->
+  #  randomNumber  = Math.floor(Math.random() * 50) + 1
+  #  backgroundUri = "url(/img/bg/#{randomNumber}.jpeg) no-repeat center center fixed"
+  #  @$background.css "background", backgroundUri
 
   download: ->
     hash = location.hash
