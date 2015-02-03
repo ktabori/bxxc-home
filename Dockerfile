@@ -8,8 +8,6 @@ RUN apt-get -y install nodejs
 RUN apt-get -y install npm
 RUN apt-get clean 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN node -v
-RUN npm -v
 
 RUN npm install -g grunt-cli
 RUN npm install -g forever
