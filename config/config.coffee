@@ -29,5 +29,4 @@ config =
     api: 'http://vulp.li/bxxc/all'
     db: 'mongodb://bxxc_mongo:NNG7Jgoo4b@dogen.mongohq.com:10064/bxxc'
 
-
 module.exports = config[env]

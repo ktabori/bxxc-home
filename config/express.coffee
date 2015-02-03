@@ -32,6 +32,8 @@ module.exports = (app, config) ->
       res.locals.globals = JSON.parse(data)
       next()
 
+  app.locals.env = process.env.NODE_ENV || 'development'
+
   # helpers
   app.locals.twitterText = (text) ->
     string = twitterText.autoLink text
