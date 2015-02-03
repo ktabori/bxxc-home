@@ -18,6 +18,4 @@ RUN cd /srv/www/; npm install .; grunt prod
 
 EXPOSE 1901
 
-WORKDIR /srv/www
-
-CMD NODE_ENV="production" forever start app.js
+RUN cd /srv/www/; NODE_ENV="production" forever start app.js
