@@ -1,16 +1,23 @@
-FROM octohost/nodejs_ruby_1.9
+FROM dockerfile/ubuntu
 
-RUN mkdir /srv/www/
-RUN apt-get update && apt-get -y install git build-essential curl && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+RUN apt-get update
+RUN apt-get -y install git build-essential curl nodejs
+RUN apt-get clean 
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
-RUN apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 RUN npm install -g grunt-cli
 RUN npm install -g forever
 
+RUN mkdir /srv/www/
 ADD . /srv/www/
-RUN cd /srv/www/; npm install .; grunt prod
+RUN cd /srv/www/
+RUN npm install
+RUN grunt prod
 
-EXPOSE 80
+EXPOSE 1901
 
 WORKDIR /srv/www
 
