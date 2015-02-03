@@ -1,7 +1,7 @@
 express   = require 'express'
 unirest   = require 'unirest'
 router    = express.Router()
-api       = 'http://vulp.li/bxxc/all'
+api       = 'http://api.dmngd.co/bxxc/all'
 
 module.exports = (app) ->
   app.use '/', router
