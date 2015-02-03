@@ -8,7 +8,7 @@ RUN npm install -g grunt-cli
 RUN npm install -g forever
 
 ADD . /srv/www/
-RUN cd /srv/www/; npm install .
+RUN cd /srv/www/; npm install .; grunt prod
 
 EXPOSE 80
 
