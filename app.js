@@ -1,7 +1,4 @@
 require('coffee-script/register');
-var Memcache = require('memcache');
-
-var memcache = new Memcache.Client(19180, 'pub-memcache-19180.eu-west-1-2.1.ec2.garantiadata.com');
 
 var express = require('express'),
   config = require('./config/config'),
