@@ -12,5 +12,4 @@ router.get '/clips', (req, res, next) ->
     .end (response)->
       data = response.body
       data.pageTitle = 'Clips'
-      res.setHeader 'Cache-Control', 'public, max-age=31557600'
       res.render 'clips', data

@@ -12,5 +12,4 @@ router.get '/aw', (req, res, next) ->
     .end (response)->
       data = response.body
       data.pageTitle = 'AW'
-      res.setHeader 'Cache-Control', 'public, max-age=31557600'
       res.render 'aw', data
