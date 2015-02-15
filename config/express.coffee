@@ -26,11 +26,9 @@ module.exports = (app, config) ->
   app.use methodOverride()
 
   # globals
-  app.use (req, res, next) ->
-    fs.readFile __dirname + "/globals.json", "utf8", (err, data) ->
-      throw err  if err
-      res.locals.globals = JSON.parse(data)
-      next()
+  fs.readFile __dirname + "/globals.json", "utf8", (err, data) ->
+    throw err  if err
+    app.locals.globals = JSON.parse(data)
 
   app.locals.env = process.env.NODE_ENV || 'development'
 
