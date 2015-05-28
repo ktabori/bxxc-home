@@ -1,6 +1,6 @@
 {
   "name": "bxxc",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "private": true,
   "main": "app.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "postinstall": "./node_modules/grunt-cli/bin/grunt prod"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.x"
   },
   "dependencies": {
     "body-parser": "~1.4.3",
