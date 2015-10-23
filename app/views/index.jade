@@ -19,8 +19,8 @@ mixin twitterItem(link, avatar, username, userscreen, tweet)
 
 mixin youtubeItem(yid, title, desc, poster)
   .col-md-6.col-sm-6.col-xs-12.video-col
-    video#4tIiWVATbkM.sublime(poster=poster, width='640', height='360', title=title, data-sharing-title=title, data-sharing-text=desc, data-sharing-twitter-text=desc, data-uid=yid, data-youtube-id=yid, data-autoresize='fit', preload='none')
-
+    .video-container
+      iframe(width='560', height='315', src='https://www.youtube.com/embed/'+yid, frameborder='0', allowfullscreen='')
 
 block content
   .row.hidden-xs.md-20
@@ -34,7 +34,8 @@ block content
 
         .row
           .col-md-6.col-sm-12.co-xs-12.video-col
-            video#4tIiWVATbkM.sublime(poster='http://bxxc.s3.amazonaws.com/4tIiWVATbkM.jpg', width='640', height='360', title='BxxC Promo', data-sharing-title='BxxC Promo', data-sharing-text='Clan promo for bxxc...', data-sharing-twitter-text='Clan promo for bxxc...', data-uid='4tIiWVATbkM', data-youtube-id='4tIiWVATbkM', data-autoresize='fit', preload='none')
+            .video-container
+              iframe(width='560', height='349', src='https://www.youtube.com/embed/4tIiWVATbkM', frameborder='0', allowfullscreen='')
 
           .col-md-3.col-sm-6.sm-20.col-xs-12.xs-10
             p Clan promo for BxxC Clan in Call of Duty: Black Ops II. Thanks for watching and remember to keep calm and subscribe us.

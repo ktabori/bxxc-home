@@ -10425,6 +10425,19 @@ p {
   position: relative;
   z-index: 9999;
 }
+.video-col .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+}
+.video-col .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .btn {
   border-radius: 0px;
 }
