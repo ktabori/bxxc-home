@@ -6,7 +6,7 @@ class Init
 
     #@randomBackground()
     @download()
-    @svgIcons()
+    #@svgIcons()
 
   #randomBackground: ->
   #  randomNumber  = Math.floor(Math.random() * 50) + 1

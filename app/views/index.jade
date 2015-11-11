@@ -17,7 +17,7 @@ mixin twitterItem(link, avatar, username, userscreen, tweet)
           span='@' + userscreen
     p.tweet!=twitterText(tweet)
 
-mixin youtubeItem(yid, title, desc, poster)
+mixin youtubeItem(yid)
   .col-md-6.col-sm-6.col-xs-12.video-col
     .video-container
       iframe(width='560', height='315', src='https://www.youtube.com/embed/'+yid, frameborder='0', allowfullscreen='')
@@ -95,12 +95,8 @@ block content
         .img-holder
           each e, i in YoutubeUploads
             if i < 8
-              +youtubeItem(e.Id, e.Title, e.Description, 'http://bxxc.s3.amazonaws.com/' + e.Id + '.jpg')
+              +youtubeItem(e.Id)
 
   a(href=globals.youtube)
     .box-bottom
       span.box-button See all videos
-
-
-
-

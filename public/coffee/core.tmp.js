@@ -5,7 +5,6 @@ Init = (function() {
     this.$background = $('#background');
     this.$overlay = $('#overlay');
     this.download();
-    this.svgIcons();
   }
 
   Init.prototype.download = function() {
