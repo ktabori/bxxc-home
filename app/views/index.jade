@@ -2,101 +2,77 @@ extends layout
 
 -var page = 'Home'
 
-mixin imageItem(link, img)
-  a(href=link)
-    .col-md-4.col-sm-4.col-xs-6
-      img(src=img)
 
-mixin twitterItem(link, avatar, username, userscreen, tweet)
-  .twitter-holder
+mixin imageItem(link, img, description, likes)
+  li
     a(href=link)
-      .twitter-meta
-        img.twitter-avatar(src=avatar)
-        p.twitter-username
-          span=username
-          span='@' + userscreen
-    p.tweet!=twitterText(tweet)
+      .background-image-holder
+        img.background-image(alt=likes + ' Likes', src=img)
 
-mixin youtubeItem(yid)
-  .col-md-6.col-sm-6.col-xs-12.video-col
-    .video-container
-      iframe(width='560', height='315', src='https://www.youtube.com/embed/'+yid, frameborder='0', allowfullscreen='')
+mixin twitterItem(link, avatar, username, userscreen, tweet)  
+  .col-sm-4.twitter-item
+    p.tweet(style="font-size: 18px;")!=twitterText(tweet)
+
+mixin youtubeItem(id)
+  .col-md-6.col-sm-6.mb-xs-30.mb24
+    .embed-video-container.embed-responsive.embed-responsive-16by9
+      iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + id + "?showinfo=0&rel=0&modestbranding=1")
 
 block content
-  .row.hidden-xs.md-20
-    .col-md-12.col-sm-12.col-xs-12
-      a(href='/')
-        .logo
 
-  .row
-    .col-md-12.col-sm-12.col-xs-12
-      .section
+  section.pt120.pb120.image-bg.overlay.parallax
+    .overlay
+    .background-image-holder
+      img.background-image(alt="Background", src="img/bg-video-triangle.png")
+    .container
+      .row.v-align-children
+        .col-sm-8.mb-xs-80
+          h2.mb16
+            | Black Ops is Back, We are too
+            br.hidden-sm
+            | More Black Ops Videos Commin Soon
+          a.btn.btn-filled.btn-lg.mb0(href="https://www.youtube.com/user/bxxcclan") Our YouTube Channel
+        .col-sm-4.text-center.text-left-xs
+          .modal-container
+            .play-button.btn-modal.large.inline
+            .foundry_modal.no-bg
+              iframe(data-provider="youtube", data-video-id="4tIiWVATbkM", data-autoplay="1")
 
-        .row
-          .col-md-6.col-sm-12.co-xs-12.video-col
-            .video-container
-              iframe(width='560', height='349', src='https://www.youtube.com/embed/4tIiWVATbkM', frameborder='0', allowfullscreen='')
+  section.bg-dark(style="padding-top: 60px; padding-bottom: 30px;")
+    .container.text-center
+      i.ti-twitter-alt.icon.icon-lg.color-primary.mb40.mb-xs-24
+      .row
+        each e, i in data.twitterFeed
+          if i < 3
+            +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
+            
+  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+    .container.text-center
+      i.ti-youtube.icon.icon-lg.color-primary.mb40.mb-xs-24
+      .row.mb24
+        each v, i in data.youtubePlaylist.items
+          +youtubeItem(v.snippet.resourceId.videoId)
 
-          .col-md-3.col-sm-6.sm-20.col-xs-12.xs-10
-            p Clan promo for BxxC Clan in Call of Duty: Black Ops II. Thanks for watching and remember to keep calm and subscribe us.
+  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+    .container.text-center
+      i.ti-instagram.icon.icon-lg.color-primary.mb40.mb-xs-24
+      h3.color-primary #bxxcclan
+      .row
+        .col-sm-12
+          .lightbox-grid.square-thumbs()
+            ul
+              each e, i in data.instagramTag.data
+                if i < 8
+                  +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
 
-          .col-md-3.col-sm-6.sm-20.col-xs-12.xs-10
-            a.btn.btn-primary.btn-lg.btn-block(href=globals.youtube)
-              span.social.youtube
-              span.text youtube
-
-            a.btn.btn-primary.btn-lg.btn-block(href=globals.facebook)
-              span.social.facebook
-              span.text facebook
-
-            a.btn.btn-primary.btn-lg.btn-block(href=globals.twitter)
-              span.social.twitter
-              span.text twitter
-
-            a.btn.btn-primary.btn-lg.btn-block(href=globals.instagram)
-              span.social.instagram
-              span.text instagram
-
-  .row
-    .col-md-8.col-sm-12.col-xs-12
-      .box
-        h2 Instagram
-          span.sub.pull-right #bxxcclan
-
-        .img-holder
-          each e, i in InstagramTag
-            if i < 6
-              +imageItem(e.Link, e.StandadRes)
-
-          each e, i in InstagramTimeline
-            if i < 6
-              +imageItem(e.Link, e.StandadRes)
-      a(href=globals.instagram)
-        .box-bottom
-          span.box-button See all images
-
-    .col-md-4.col-sm-12.col-xs-12
-      .box.twitter
-        h2 twitter
-
-        each e, i in TwitterTimeline
-          if i < 4
-            +twitterItem(e.UserUrl, e.UserAvatar, e.UserName, e.UserScreenName, e.Tweet)
-
-      a(href=globals.twitter)
-        .box-bottom
-          span.box-button See all tweets
-
-  .row
-    .col-md-12.col-sm-12.col-xs-12
-      .box.youtube
-        h2 Youtube
-
-        .img-holder
-          each e, i in YoutubeUploads
-            if i < 8
-              +youtubeItem(e.Id)
-
-  a(href=globals.youtube)
-    .box-bottom
-      span.box-button See all videos
+  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+    .container.text-center
+      i.ti-instagram.icon.icon-lg.color-primary.mb40.mb-xs-24
+      h3.color-primary @bxxcclan
+      .row
+        .col-sm-12
+          .lightbox-grid.square-thumbs()
+            ul
+              each e, i in data.instagramFeed.data
+                if i < 8
+                  +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)

@@ -1,6 +1,6 @@
 {
   "name": "bxxc",
-  "version": "2.0.2",
+  "version": "2.0.0",
   "private": true,
   "main": "app.js",
   "scripts": {

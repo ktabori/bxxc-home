@@ -1,5 +1,10 @@
-BXXC
+BxxC Home
 =====
+
+- bxxc.bxxc.pro
+- bxxc.pro
+- bxxc.ktabori.me
+- bxxc.bxxc.pro
 
 
 ## Development

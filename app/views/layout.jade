@@ -4,21 +4,53 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
     meta(name='node-env', content=env)
-    title BxxC Clan | #{pageTitle}
-    block css
-      link(rel='stylesheet', href='/css/core.css')
-    block js
-      if env == 'development'
-        script(src='http://localhost:35729/livereload.js')
-      script(src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-  body
-    #background
-      #overlay
+    title Damn Good Company | #{pageTitle}
+    
+    link(rel='stylesheet', href='/css/core.css')
+    link(href="http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600", rel="stylesheet", type="text/css")
 
-    #outdated
+    if env == 'development'
+      script(src='http://localhost:35729/livereload.js')
+    
+  body.boxed-layout.btn-rounded
+    if navigation
+      .nav-container
+        nav.bg-dark
+          .nav-bar
+            .module.left
+              a(href="/")
+                img.logo.logo-light(alt="Logo", src="/img/bxxc-pro.jpg")
+                img.logo.logo-dark(alt="Logo", src="/img/bxxc-pro.jpg")
+            .module.widget-handle.mobile-toggle.right.visible-sm.visible-xs
+              i.ti-menu
+            .module-group.right
+              .module.left
+                ul.menu
+                  each n in navigation
+                    li
+                      a(href=n.url)= n.name
 
-    .content
-      .container
-        block content
+    .main-container
+      block content
 
     script(src='/js/core.js')
+    
+    footer.footer-2.bg-dark.text-center-xs
+      .container
+        .row
+          .col-sm-4
+            a(href="#")
+              img.image-xxs.fade-half(alt="Logo", src="/img/bxxc-pro.jpg", style="max-height: 20px;")
+          .col-sm-4.text-center
+            span.fade-half
+              | &#169; Copyright 2015 BxxC Clan
+          .col-sm-4.text-right.text-center-xs
+            ul.list-inline.social-list
+              li
+                a(href="https://twitter.com/bxxcclan")
+                  i.ti-twitter-alt
+              li
+                a(href="https://www.facebook.com/bxxcclan")
+                  i.ti-facebook
+
+    .bg-holder

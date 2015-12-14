@@ -42,11 +42,18 @@ module.exports = function (grunt) {
           beautify: true
         },
         files: { 'public/js/core.js':
-          [ 'public/libs/snap-svg.js',
-            'public/libs/jquery-2.1.1.js',
-            'public/libs/collapse.js',
-            'public/libs/svg-icons-config.js',
-            'public/libs/svg-icons.js',
+          [ 'public/libs/jquery.min.js',
+            'public/libs/bootstrap.js',
+            'public/libs/flexslider.min.js',
+            'public/libs/lightbox.min.js',
+            'public/libs/masonry.min.js',
+            'public/libs/twitterfetcher.min.js',
+            'public/libs/spectragram.min.js',
+            'public/libs/ytplayer.min.js',
+            'public/libs/countdown.min.js',
+            'public/libs/smooth-scroll.min.js',
+            'public/libs/parallax.js',
+            'public/libs/scripts.js',
             'public/coffee/core.tmp.js'
           ]
         }
