@@ -690,7 +690,7 @@
             NaN: 1,
             Infinity: 1,
             "-Infinity": 1
-        }, X = /^url\(#?([^)]+)\)$/, Y = " \n\f\r   ᠎             　\u2028\u2029", Z = new RegExp("[," + Y + "]+"), $ = (new RegExp("[" + Y + "]", "g"), 
+        }, X = /^url\(#?([^)]+)\)$/, Y = " \n\x0B\f\r   ᠎             　\u2028\u2029", Z = new RegExp("[," + Y + "]+"), $ = (new RegExp("[" + Y + "]", "g"), 
         new RegExp("[" + Y + "]*,[" + Y + "]*")), _ = {
             hs: 1,
             rg: 1
