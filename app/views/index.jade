@@ -5,7 +5,7 @@ extends layout
 
 mixin imageItem(link, img, description, likes)
   li
-    a(href=link)
+    a(href=link, target='blank')
       .background-image-holder
         img.background-image(alt=likes + ' Likes', src=img)
 
@@ -43,11 +43,12 @@ block content
       .row
         .col-md-12
           .header(style="margin-bottom: 40px; height: 50px;")
-            .pull-left
-              h4
-                i.ti-twitter-alt.icon.icon-sm
-            .pull-left.ml10
-              h4 Twitter
+            a(href="http://twitter.com/bxxcclan", target='blank')
+              .pull-left
+                h4
+                  i.ti-twitter-alt.icon.icon-sm
+              .pull-left.ml10
+                h4 Twitter
       .row.text-center
         each e, i in data.twitterFeed
           if i < 3
@@ -58,11 +59,12 @@ block content
       .row
         .col-md-12
           .header(style="margin-bottom: 40px; height: 50px;")
-            .pull-left
-              h4
-                i.ti-youtube.icon.icon-sm
-            .pull-left.ml10
-              h4 YouTube
+            a(href="http://youtube.com/bxxcclan", target='blank')
+              .pull-left
+                h4
+                  i.ti-youtube.icon.icon-sm
+              .pull-left.ml10
+                h4 YouTube
       .row
         each v, i in data.youtubePlaylist.items
           +youtubeItem(v.snippet.resourceId.videoId)
@@ -72,13 +74,14 @@ block content
       .row
         .col-md-12
           .header(style="margin-bottom: 40px; height: 50px;")
-            .pull-left
-              h4
-                i.ti-instagram.icon.icon-sm
-            .pull-left.ml10
-              h4 Instagram
-            .pull-right
-              h4 @BXXCCLAN
+            a(href="http://instagram.com/bxxcclan", target='blank')
+              .pull-left
+                h4
+                  i.ti-instagram.icon.icon-sm
+              .pull-left.ml10
+                h4 Instagram
+              .pull-right
+                h4 @BXXCCLAN
       .row
         .col-sm-12
           .lightbox-grid.square-thumbs()
@@ -92,13 +95,14 @@ block content
       .row
         .col-md-12
           .header(style="margin-bottom: 40px; height: 50px;")
-            .pull-left
-              h4
-                i.ti-instagram.icon.icon-sm
-            .pull-left.ml10
-              h4 Instagram
-            .pull-right
-              h4 #BXXCCLAN
+            a(href="http://instagram.com/bxxcclan", target='blank')
+              .pull-left
+                h4
+                  i.ti-instagram.icon.icon-sm
+              .pull-left.ml10
+                h4 Instagram
+              .pull-right
+                h4 #BXXCCLAN
       .row
         .col-sm-12
           .lightbox-grid.square-thumbs()

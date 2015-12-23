@@ -16067,7 +16067,7 @@ footer.bg-dark a {
   z-index: -9999;
 }
 .main-container {
-  opacity: .95;
+  opacity: .98;
 }
 section.image-bg .overlay {
   width: 100%;
@@ -16081,22 +16081,22 @@ section.image-bg .overlay {
   z-index: 2;
 }
 .header {
-  border-top: 4px solid rgba(71, 180, 117, 0.5);
-  border-bottom: 1px solid rgba(71, 180, 117, 0.5);
+  border-top: 4px solid rgba(71, 180, 117, 0.7);
+  border-bottom: 1px solid rgba(71, 180, 117, 0.7);
   padding-top: 7px;
   padding-bottom: 3px;
 }
 .header i {
-  color: rgba(71, 180, 117, 0.5) !important;
+  color: rgba(71, 180, 117, 0.7) !important;
   font-size: 21px;
 }
 .header h4 {
   margin-bottom: 0;
   margin-left: 10px;
-  color: rgba(71, 180, 117, 0.5);
+  color: rgba(71, 180, 117, 0.7);
 }
 .bordered-bottom {
-  border-bottom: 1px solid rgba(71, 180, 117, 0.5);
+  border-bottom: 1px solid rgba(71, 180, 117, 0.7);
 }
 .lightbox-grid ul {
   margin-left: -8px;

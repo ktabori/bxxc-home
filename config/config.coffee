@@ -8,7 +8,7 @@ config =
     app:
       name: 'bxxc'
     port: 3000
-    api: 'http://api.dmngd.co/bxxc/all'
+    api: 'http://cms.dmngd.co'
 
 
   test:
@@ -16,7 +16,7 @@ config =
     app:
       name: 'bxxc'
     port: 3000
-    api: 'http://api.dmngd.co/bxxc/all'
+    api: 'http://cms.dmngd.co'
 
 
   production:
@@ -24,6 +24,6 @@ config =
     app:
       name: 'bxxc'
     port: process.env.PORT || 3000
-    api: 'http://api.dmngd.co/bxxc/all'
+    api: 'http://cms.dmngd.co'
 
 module.exports = config[env]
