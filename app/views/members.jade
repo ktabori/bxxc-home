@@ -1,0 +1,98 @@
+extends layout
+
+-var page = 'Home'
+
+
+mixin imageItem(link, img, description, likes)
+  li
+    a(href=link, target='blank')
+      .background-image-holder
+        img.background-image(alt=likes + ' Likes', src=img)
+
+mixin twitterItem(link, avatar, username, userscreen, tweet)  
+  .col-sm-4.twitter-item
+    p.tweet(style="font-size: 18px;")!=twitterText(tweet)
+
+mixin youtubeItem(id)
+  .col-md-6.col-sm-6.mb-xs-30.mb24
+    .embed-video-container.embed-responsive.embed-responsive-16by9
+      iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + id + "?showinfo=0&rel=0&modestbranding=1")
+
+block content
+
+  section.pt120.pb120.image-bg.overlay.parallax
+    .overlay
+    .background-image-holder
+      img.background-image(alt="Background", src="img/bg-video-triangle.png")
+    .container
+      .row.v-align-children
+        h2.mb0
+          | Our Great Members
+    .align-bottom.text-center
+      ul.list-inline.social-list.mb24
+        li
+          a(href="https://twitter.com/bxxcclan")
+            i.fa.fa-twitter
+        li
+          a(href="https://www.facebook.com/bxxcclan")
+            i.fa.fa-facebook
+        li
+          a(href="https://instagram.com/bxxcclan")
+            i.fa.fa-instagram
+        li
+          a(href="https://www.youtube.com/user/bxxcclan")
+            i.fa.fa-youtube
+
+  section.bg-dark
+    .container
+      .row
+        each m, i in data
+          .col-sm-4.text-center
+            .feature.boxed.cast-shadow-light
+              img.image-small.inline-block.mb24.img-circle(alt="Pic", src=m.Profile.GameDisplayPicRaw, style="min-width: 80px;")
+              h4.mb0= m.Profile.Gamertag
+              h5= 'G ' + m.Profile.Gamerscore
+              a.btn.btn-lg.mb0(href='/member/' + m.GamertagSlug) View Profile
+
+  
+  
+  
+  section.bg-dark
+    .container
+      each m, i in data
+        .row.v-align-children.mt80.pt80
+          .col-sm-6.col-md-5
+            a(href='/member/'+m.GamertagSlug)
+              h2.uppercase.color-primary= m.Profile.Gamertag
+            hr
+            p
+              | Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          .col-sm-6.col-md-offset-1.p0
+            .col-sm-6.text-center
+              .feature.bordered.mb30
+                h1.large.uppercase 5
+                h5.uppercase Bedrooms
+            .col-sm-6.text-center
+              .feature.bordered.mb30
+                h1.large 2
+                h5.uppercase Living
+            .col-sm-6.text-center
+              .feature.bordered.mb30
+                h1.large 4
+                h5.uppercase Bathroom
+            .col-sm-6.text-center
+              .feature.bordered.mb30
+                h1.large 3
+                h5.uppercase Parking
+        
+        if m.SavedGameClips
+          each v, i in m.SavedGameClips
+            if i < 8
+              .row.v-align-children
+                .col-md-6.col-sm-6.text-center.mb-xs-24
+                  .local-video-container
+                    .background-image-holder
+                      img.background-image(alt="Background Image", src=v.thumbnails[1].uri)
+                    video(controls="")
+                      source(src=v.gameClipUris[0].uri, type="video/mp4")
+                    .play-button

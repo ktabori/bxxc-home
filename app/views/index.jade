@@ -52,78 +52,80 @@ block content
         li
           a(href="https://www.youtube.com/user/bxxcclan")
             i.fa.fa-youtube
-              
-  section.bg-dark(style="padding-top: 60px; padding-bottom: 30px;")
-    .container
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="http://twitter.com/bxxcclan", target='blank')
-              .pull-left
-                h4
-                  i.ti-twitter-alt.icon.icon-sm
-              .pull-left.ml10
-                h4 Twitter
-      .row.text-center
-        each e, i in data.twitterFeed
-          if i < 3
-            +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
-            
-  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
-    .container.text-center
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="http://youtube.com/bxxcclan", target='blank')
-              .pull-left
-                h4
-                  i.ti-youtube.icon.icon-sm
-              .pull-left.ml10
-                h4 YouTube
-      .row
-        each v, i in data.youtubePlaylist.items
-          +youtubeItem(v.snippet.resourceId.videoId)
   
-  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
-    .container.text-center
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="http://instagram.com/bxxcclan", target='blank')
-              .pull-left
-                h4
-                  i.ti-instagram.icon.icon-sm
-              .pull-left.ml10
-                h4 Instagram
-              .pull-right
-                h4 @BXXCCLAN
-      .row
-        .col-sm-12
-          .lightbox-grid.square-thumbs()
-            ul
-              each e, i in data.instagramFeed.data
-                if i < 8
-                  +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
-
-  section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
-    .container.text-center
-      .row
-        .col-md-12
-          .header(style="margin-bottom: 40px; height: 50px;")
-            a(href="http://instagram.com/bxxcclan", target='blank')
-              .pull-left
-                h4
-                  i.ti-instagram.icon.icon-sm
-              .pull-left.ml10
-                h4 Instagram
-              .pull-right
-                h4 #BXXCCLAN
-      .row
-        .col-sm-12
-          .lightbox-grid.square-thumbs()
-            ul
-              each e, i in data.instagramTag.data
-                if i < 8
-                  +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
-
+  if data.twitterFeed
+    section.bg-dark(style="padding-top: 60px; padding-bottom: 30px;")
+      .container
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="http://twitter.com/bxxcclan", target='blank')
+                .pull-left
+                  h4
+                    i.ti-twitter-alt.icon.icon-sm
+                .pull-left.ml10
+                  h4 Twitter
+        .row.text-center
+          each e, i in data.twitterFeed
+            if i < 3
+              +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
   
+  if data.youtubePlaylist.items
+    section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+      .container.text-center
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="http://youtube.com/bxxcclan", target='blank')
+                .pull-left
+                  h4
+                    i.ti-youtube.icon.icon-sm
+                .pull-left.ml10
+                  h4 YouTube
+        .row
+          each v, i in data.youtubePlaylist.items
+            +youtubeItem(v.snippet.resourceId.videoId)
+  
+  if data.instagramFeed.data
+    section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+      .container.text-center
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="http://instagram.com/bxxcclan", target='blank')
+                .pull-left
+                  h4
+                    i.ti-instagram.icon.icon-sm
+                .pull-left.ml10
+                  h4 Instagram
+                .pull-right
+                  h4 @BXXCCLAN
+        .row
+          .col-sm-12
+            .lightbox-grid.square-thumbs()
+              ul
+                each e, i in data.instagramFeed.data
+                  if i < 8
+                    +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
+
+  if data.instagramTag.data
+    section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
+      .container.text-center
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              a(href="http://instagram.com/bxxcclan", target='blank')
+                .pull-left
+                  h4
+                    i.ti-instagram.icon.icon-sm
+                .pull-left.ml10
+                  h4 Instagram
+                .pull-right
+                  h4 #BXXCCLAN
+        .row
+          .col-sm-12
+            .lightbox-grid.square-thumbs()
+              ul
+                each e, i in data.instagramTag.data
+                  if i < 8
+                    +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
