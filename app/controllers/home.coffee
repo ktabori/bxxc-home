@@ -56,3 +56,21 @@ module.exports = (app) ->
               navigation: navres.body
 
             res.render 'member', data
+
+  router.get '/bo/:member', (req, res, next) ->
+    if req.params.member
+      member = req.params.member
+    else
+      res.render "error"
+
+    unirest.get nav
+      .end (navres) ->
+
+        unirest.get xboxApi + member
+          .end (xbox) ->
+            data =
+              data: xbox.body
+              pageTitle: 'Xbox'
+              navigation: navres.body
+
+            res.render 'bovideo', data

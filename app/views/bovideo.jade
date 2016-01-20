@@ -20,14 +20,13 @@ mixin youtubeItem(id)
 
 block content
 
-  section.pt120.pb120.image-bg.overlay.parallax
+  section.image-bg.overlay.parallax
     .overlay
     .background-image-holder
       img.background-image(alt="Background", src="/img/bg-video-triangle.png")
     .container
       .row.v-align-children
-        h2.mb0
-          | Our Great Members
+        h2.mb0= data.Profile.Gamertag
     .align-bottom.text-center
       ul.list-inline.social-list.mb24
         li
@@ -42,14 +41,26 @@ block content
         li
           a(href="https://www.youtube.com/user/bxxcclan")
             i.fa.fa-youtube
-
-  section.bg-dark
-    .container
-      .row
-        each m, i in data
-          .col-sm-4.text-center
-            .feature.boxed.cast-shadow-light
-              img.image-small.inline-block.mb24.img-circle(alt="Pic", src=m.Profile.GameDisplayPicRaw, style="min-width: 80px;")
-              h4.mb0= m.Profile.Gamertag
-              h5= 'G ' + m.Profile.Gamerscore
-              a.btn.btn-lg.mb0(href='/member/' + m.GamertagSlug) View Profile
+  
+  if data.BlackOpsGameClips.length > 0            
+    section.bg-dark
+      .container
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              .pull-left
+                h4
+                  i.fa.fa-film.icon.icon-sm
+              .pull-left.ml10
+                h4 Black Ops III Captures
+        .row
+          if data.BlackOpsGameClips
+            each v, i in data.BlackOpsGameClips
+              .col-md-6.col-sm-6.masonry-item.project()
+                .image-tile.inner-title.hover-reveal.text-center
+                  a(href=v.gameClipUris[0].uri, target='blank')
+                    img(alt="Background Image", src=v.thumbnails[1].uri)
+                    .play-button
+                    .title
+                      h5.uppercase.mb0= v.titleName
+                      span= v.clipName

@@ -20,58 +20,69 @@ mixin youtubeItem(id)
 
 block content
 
-  section.pt120.pb120.image-bg.overlay.parallax
+  section.image-bg.overlay.parallax
     .overlay
     .background-image-holder
-      img.background-image(alt="Background", src="img/bg-video-triangle.png")
+      img.background-image(alt="Background", src="/img/bg-video-triangle.png")
     .container
       .row.v-align-children
-        .col-sm-8.mb-xs-100.text-center-xs
-          h2.mb0
-            | Black Ops is Back, We are too!
-          h4.mb24
-            | More Black Ops Videos Comming Soon
-          a.btn.btn-filled.btn-lg.mb0(href="https://www.youtube.com/user/bxxcclan") Our YouTube Channel
-        .col-sm-4.text-center.text-center-xs.mb-xs-20.mt-xs-80
-          .modal-container
-            .play-button.btn-modal.large.inline
-            .foundry_modal.no-bg
-              iframe(data-provider="youtube", data-video-id="4tIiWVATbkM", data-autoplay="1")
-          
-  section.bg-dark
-    .container
-        .row.v-align-children.mt80.pt80
-          .col-sm-6.col-md-5
-            h2.uppercase.color-primary= data.Profile.Gamertag
-            hr
-            p
-              | Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          .col-sm-6.col-md-offset-1.p0
-            .col-sm-6.text-center
-              .feature.bordered.mb30
-                h1.large.uppercase 5
-                h5.uppercase Bedrooms
-            .col-sm-6.text-center
-              .feature.bordered.mb30
-                h1.large 2
-                h5.uppercase Living
-            .col-sm-6.text-center
-              .feature.bordered.mb30
-                h1.large 4
-                h5.uppercase Bathroom
-            .col-sm-6.text-center
-              .feature.bordered.mb30
-                h1.large 3
-                h5.uppercase Parking
-        
-        if data.SavedGameClips
-          each v, i in data.SavedGameClips
-            if i < 8
-              .row.v-align-children
-                .col-md-6.col-sm-6.text-center.mb-xs-24
-                  .local-video-container
-                    .background-image-holder
-                      img.background-image(alt="Background Image", src=v.thumbnails[1].uri)
-                    video(controls="")
-                      source(src=v.gameClipUris[0].uri, type="video/mp4")
+        h2.mb0= data.Profile.Gamertag
+    .align-bottom.text-center
+      ul.list-inline.social-list.mb24
+        li
+          a(href="https://twitter.com/bxxcclan")
+            i.fa.fa-twitter
+        li
+          a(href="https://www.facebook.com/bxxcclan")
+            i.fa.fa-facebook
+        li
+          a(href="https://instagram.com/bxxcclan")
+            i.fa.fa-instagram
+        li
+          a(href="https://www.youtube.com/user/bxxcclan")
+            i.fa.fa-youtube
+  
+  if data.SavedGameClips.length > 0            
+    section.bg-dark
+      .container
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              .pull-left
+                h4
+                  i.fa.fa-film.icon.icon-sm
+              .pull-left.ml10
+                h4 Latest Game Captures
+        .row
+          if data.SavedGameClips
+            each v, i in data.SavedGameClips
+              .col-md-6.col-sm-6.masonry-item.project()
+                .image-tile.inner-title.hover-reveal.text-center
+                  a(href=v.gameClipUris[0].uri, target='blank')
+                    img(alt="Background Image", src=v.thumbnails[1].uri)
                     .play-button
+                    .title
+                      h5.uppercase.mb0= v.titleName
+                      span= v.clipName
+
+  if data.Screenshots.length > 0 
+    section.bg-dark
+      .container
+        .row
+          .col-md-12
+            .header(style="margin-bottom: 40px; height: 50px;")
+              .pull-left
+                h4
+                  i.fa.fa-photo.icon.icon-sm
+              .pull-left.ml10
+                h4 Latest Screenshots
+                  
+        .row
+            each s, i in data.Screenshots
+              .col-md-6.col-sm-6.masonry-item.project()
+                .image-tile.inner-title.hover-reveal.text-center
+                  a(href=s.thumbnails[1].uri, target='blank')
+                    img(alt="Background Image", src=s.thumbnails[1].uri)
+                    .title
+                      h5.uppercase.mb0= s.titleName
+                      span= s.clipName
