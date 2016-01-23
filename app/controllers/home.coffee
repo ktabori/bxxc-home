@@ -20,7 +20,6 @@ module.exports = (app) ->
             data = response.body
             data.pageTitle = 'Home'
             data.navigation = navres.body.records
-            console.log data
             res.render 'index', data
 
 
@@ -28,6 +27,7 @@ module.exports = (app) ->
   router.get '/members', (req, res, next) ->
 
     unirest.get nav
+      .headers ({'Authorization': 'Bearer keyji9aGN0OHwZzZc'})
       .end (navres) ->
 
         unirest.get xboxApi + 'all'
@@ -35,7 +35,7 @@ module.exports = (app) ->
             data =
               data: xbox.body
               pageTitle: 'Xbox'
-              navigation: navres.body
+              navigation: navres.body.records
 
             res.render 'members', data
 
@@ -46,6 +46,7 @@ module.exports = (app) ->
       res.render "error"
 
     unirest.get nav
+      .headers ({'Authorization': 'Bearer keyji9aGN0OHwZzZc'})
       .end (navres) ->
 
         unirest.get xboxApi + member
@@ -53,7 +54,7 @@ module.exports = (app) ->
             data =
               data: xbox.body
               pageTitle: 'Xbox'
-              navigation: navres.body
+              navigation: navres.body.records
 
             res.render 'member', data
 
@@ -64,6 +65,7 @@ module.exports = (app) ->
       res.render "error"
 
     unirest.get nav
+      .headers ({'Authorization': 'Bearer keyji9aGN0OHwZzZc'})
       .end (navres) ->
 
         unirest.get xboxApi + member
@@ -71,6 +73,6 @@ module.exports = (app) ->
             data =
               data: xbox.body
               pageTitle: 'Xbox'
-              navigation: navres.body
+              navigation: navres.body.records
 
             res.render 'bovideo', data
