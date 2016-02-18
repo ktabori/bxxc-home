@@ -53,7 +53,7 @@ block content
           a(href="https://www.youtube.com/user/bxxcclan")
             i.fa.fa-youtube
   
-  if data.twitterFeed
+  if Data.twitterFeed
     section.bg-dark(style="padding-top: 60px; padding-bottom: 30px;")
       .container
         .row
@@ -66,11 +66,11 @@ block content
                 .pull-left.ml10
                   h4 Twitter
         .row.text-center
-          each e, i in data.twitterFeed
+          each e, i in Data.twitterFeed
             if i < 3
               +twitterItem('http://twitter.com/' + e.user.screen_name, e.profile_image_url_https, e.user.name, e.user.screen_name, e.text)
   
-  if data.youtubePlaylist.items
+  if Data.youtubePlaylist.items
     section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
       .container.text-center
         .row
@@ -83,10 +83,10 @@ block content
                 .pull-left.ml10
                   h4 YouTube
         .row
-          each v, i in data.youtubePlaylist.items
+          each v, i in Data.youtubePlaylist.items
             +youtubeItem(v.snippet.resourceId.videoId)
   
-  if data.instagramFeed.data
+  if Data.instagramFeed.data
     section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
       .container.text-center
         .row
@@ -104,11 +104,11 @@ block content
           .col-sm-12
             .lightbox-grid.square-thumbs()
               ul
-                each e, i in data.instagramFeed.data
+                each e, i in Data.instagramFeed.data
                   if i < 8
                     +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)
 
-  if data.instagramTag.data
+  if Data.instagramTag.data
     section.bg-dark(style="padding-top:30px; padding-bottom: 30px;")
       .container.text-center
         .row
@@ -126,6 +126,6 @@ block content
           .col-sm-12
             .lightbox-grid.square-thumbs()
               ul
-                each e, i in data.instagramTag.data
+                each e, i in Data.instagramTag.data
                   if i < 8
                     +imageItem(e.link, e.images.standard_resolution.url, e.caption, e.likes.count)

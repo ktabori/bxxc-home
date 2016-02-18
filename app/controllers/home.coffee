@@ -3,8 +3,8 @@ unirest   = require 'unirest'
 router    = express.Router()
 
 nav       = 'https://api.airtable.com/v0/appVv3qQJXVr4clNx/Top Navigation Items?limit=100&view=BxxC Navigation'
-api       = 'http://cms.dmngd.co/api/merged/ad07e5b43338eacbad3d0b7f6205546c/rendered'
-xboxApi   = 'http://cms.dmngd.co/xbox/users/'
+api       = 'http://dash.gooose.co/api/saved/bxxc-main'
+xboxApi   = 'http://dash.gooose.co/xbox/users/'
 
 module.exports = (app) ->
   app.use '/', router
@@ -21,8 +21,6 @@ module.exports = (app) ->
             data.pageTitle = 'Home'
             data.navigation = navres.body.records
             res.render 'index', data
-
-
 
   router.get '/members', (req, res, next) ->
 
