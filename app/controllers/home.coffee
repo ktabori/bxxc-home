@@ -3,8 +3,8 @@ unirest   = require 'unirest'
 router    = express.Router()
 
 nav       = 'https://api.airtable.com/v0/appVv3qQJXVr4clNx/Top Navigation Items?limit=100&view=BxxC Navigation'
-api       = 'http://dash.gooose.co/api/saved/bxxc-main'
-xboxApi   = 'http://dash.gooose.co/xbox/users/'
+api       = 'https://dash.gooose.co/api/saved/bxxc-main'
+xboxApi   = 'https://dash.gooose.co/xbox/users/'
 
 module.exports = (app) ->
   app.use '/', router
