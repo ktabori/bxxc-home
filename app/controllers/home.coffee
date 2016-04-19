@@ -19,7 +19,7 @@ module.exports = (app) ->
           .end (response) ->
             data = response.body
             data.pageTitle = 'Home'
-            data.navigation = navres.body.records
+            data.navigation = if navres.body then navres.body.records else []
             res.render 'index', data
 
   router.get '/members', (req, res, next) ->
@@ -52,7 +52,7 @@ module.exports = (app) ->
             data =
               data: xbox.body
               pageTitle: 'Xbox'
-              navigation: navres.body.records
+              navigation: if navres.body then navres.body.records else []
 
             res.render 'member', data
 
@@ -71,6 +71,6 @@ module.exports = (app) ->
             data =
               data: xbox.body
               pageTitle: 'Xbox'
-              navigation: navres.body.records
+              navigation: if navres.body then navres.body.records else []
 
             res.render 'bovideo', data
