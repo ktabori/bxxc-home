@@ -9,7 +9,7 @@ mixin imageItem(link, img, description, likes)
       .background-image-holder
         img.background-image(alt=likes + ' Likes', src=img)
 
-mixin twitterItem(link, avatar, username, userscreen, tweet)  
+mixin twitterItem(link, avatar, username, userscreen, tweet)
   .col-sm-4.twitter-item
     p.tweet(style="font-size: 18px;")!=twitterText(tweet)
 
@@ -33,16 +33,13 @@ block content
           a(href="https://twitter.com/bxxcclan")
             i.fa.fa-twitter
         li
-          a(href="https://www.facebook.com/bxxcclan")
-            i.fa.fa-facebook
-        li
           a(href="https://instagram.com/bxxcclan")
             i.fa.fa-instagram
         li
           a(href="https://www.youtube.com/user/bxxcclan")
             i.fa.fa-youtube
-  
-  if data.SavedGameClips.length > 0            
+
+  if data.SavedGameClips.length > 0
     section.bg-dark
       .container
         .row
@@ -65,7 +62,7 @@ block content
                       h5.uppercase.mb0= v.titleName
                       span= v.clipName
 
-  if data.Screenshots.length > 0 
+  if data.Screenshots.length > 0
     section.bg-dark
       .container
         .row
@@ -76,7 +73,7 @@ block content
                   i.fa.fa-photo.icon.icon-sm
               .pull-left.ml10
                 h4 Latest Screenshots
-                  
+
         .row
             each s, i in data.Screenshots
               .col-md-6.col-sm-6.masonry-item.project()

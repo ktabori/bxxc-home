@@ -3381,7 +3381,7 @@
             zoom: true
         },
         cssProps: {
-            "float": "cssFloat"
+            float: "cssFloat"
         },
         style: function(elem, name, value, extra) {
             if (!elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style) {
@@ -4140,8 +4140,8 @@
     });
     jQuery.extend({
         propFix: {
-            "for": "htmlFor",
-            "class": "className"
+            for: "htmlFor",
+            class: "className"
         },
         prop: function(elem, name, value) {
             var ret, hooks, notxml, nType = elem.nodeType;
@@ -4851,7 +4851,7 @@
             dataType: "script",
             async: false,
             global: false,
-            "throws": true
+            throws: true
         });
     };
     jQuery.fn.extend({
@@ -7225,7 +7225,7 @@ if (typeof jQuery === "undefined") {
         }, a.setup = function(e) {
             if (v) a.slides.css({
                 width: "100%",
-                "float": "left",
+                float: "left",
                 marginRight: "-100%",
                 position: "relative"
             }), "init" === e && (s ? a.slides.css({
@@ -7270,7 +7270,7 @@ if (typeof jQuery === "undefined") {
                 a.setProps(t * a.computedW, "init"), setTimeout(function() {
                     a.doMath(), a.newSlides.css({
                         width: a.computedW,
-                        "float": "left",
+                        float: "left",
                         display: "block"
                     }), a.vars.smoothHeight && m.smoothHeight();
                 }, "init" === e ? 100 : 0));
@@ -8619,8 +8619,8 @@ var ytp = ytp || {};
                 }
                 if (b || (b = jQuery.fx.speeds._default), jQuery.support.CSStransition) {
                     j = {
-                        "default": "ease",
-                        "in": "ease-in",
+                        default: "ease",
+                        in: "ease-in",
                         out: "ease-out",
                         "in-out": "ease-in-out",
                         snap: "cubic-bezier(0,1,.5,1)",

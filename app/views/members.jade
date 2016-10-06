@@ -9,7 +9,7 @@ mixin imageItem(link, img, description, likes)
       .background-image-holder
         img.background-image(alt=likes + ' Likes', src=img)
 
-mixin twitterItem(link, avatar, username, userscreen, tweet)  
+mixin twitterItem(link, avatar, username, userscreen, tweet)
   .col-sm-4.twitter-item
     p.tweet(style="font-size: 18px;")!=twitterText(tweet)
 
@@ -33,9 +33,6 @@ block content
         li
           a(href="https://twitter.com/bxxcclan")
             i.fa.fa-twitter
-        li
-          a(href="https://www.facebook.com/bxxcclan")
-            i.fa.fa-facebook
         li
           a(href="https://instagram.com/bxxcclan")
             i.fa.fa-instagram
